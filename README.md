@@ -1,6 +1,5 @@
 # corpex 
-This is Luke Gessler's fork of
-[**dictionary**](https://github.com/awatson1978/dictionary). 
+**corpex (corpus explorer)** is a fork of [**dictionary**](https://github.com/awatson1978/dictionary). 
 This fork is updated for Meteor 1.2. (At the time of writing, **dictionary** is
 a Meteor 0.6 app.)
 
