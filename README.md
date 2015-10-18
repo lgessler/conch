@@ -22,8 +22,6 @@ meteor
 ````
 ------------------------
 
-
-------------------------
 ### Licensing
 
 MIT License. Use as you wish, including for commercial purposes.
