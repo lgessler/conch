@@ -10,18 +10,22 @@ a corpus, such as
 tuned.)
 
 ------------------------
-### Installation
+### Example Installation with HindMonoCorp 
 
-````sh
-# Should be as simple as cloning the repository...  
-git clone https://github.com/awatson1978/dictionary.git
-cd dictionary
+First, install Meteor:
 
-# And then running it...
-meteor
-````
+    curl https://install.meteor.com/ | sh
+
+Download HindMonoCorp:
+    
+    cd data
+    wget https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-6260-A/hindmonocorp05.plaintext.gz?sequence=2&isAllowed=y
+    gunzip hindmonocorp05.plaintext.gz
+
+TODO: finish this
+
 ------------------------
 
 ### Licensing
 
-MIT License. Use as you wish, including for commercial purposes.
+MIT 
