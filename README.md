@@ -1,4 +1,7 @@
 # corpex 
+
+## NOTE (2015-10-27): this app is under heavily development and the readme will probably be out of date.
+
 **corpex (corpus explorer)** is a fork of [**dictionary**](https://github.com/awatson1978/dictionary). 
 This fork is updated for Meteor 1.2. (At the time of writing, **dictionary** is
 a Meteor 0.6 app.)
