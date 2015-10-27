@@ -3,16 +3,23 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-clinical:nightwatch
-standard-minifiers
-standard-app-packages
-jquery
-less@2.5.0_2
-natestrauser:font-awesome
-iron:router
-mystor:device-detection
+meteor-platform
+less
+accounts-password
+useraccounts:bootstrap
+alanning:roles
+zimme:iron-router-active
+cmather:handlebars-server@0.2.0
+dburles:collection-helpers
+reywood:publish-composite
 momentjs:moment
-random
-
-clinical:ui-vocabulary
-ian:bootstrap-3@3.3.1
+underscorestring:underscore.string
+matb33:collection-hooks
+dburles:factory
+anti:fake
+cunneen:mailgun
+iron:router@1.0.0
+yasinuslu:blaze-meta
+aldeed:collection2
+aldeed:autoform
+useraccounts:iron-routing
