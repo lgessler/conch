@@ -1,0 +1,1 @@
+db.Dictionary.find({"Definition": /मुझे क्या[\s]?[\.।!]/})
