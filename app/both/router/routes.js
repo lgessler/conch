@@ -3,24 +3,11 @@ Router.route('/', {
   name: 'home'
 });
 
-// Dashboard route
-Router.route('/dashboard', {
-  name: 'dashboard',
+Router.route('results', {
+  name: 'results',
+  path: '/results/:term',
+  template: 'results',
   waitOn: function() {
-    return this.subscribe('items');
-  },
-  data: {
-    items: Items.find({})
-  },
-  onBeforeAction: function (pause) {
-    AccountsTemplates.ensureSignedIn.call(this, pause);
-  },
-  onAfterAction: function () {
-
+    Session.set('term', this.params.term);
   }
-});
-
-// Profile Route
-Router.route('/profile', {
-  name: 'profile'
 });

@@ -1,6 +1,7 @@
 // -- Router Config --
 Router.configure({
-  layoutTemplate: 'appLayout',
+  //layoutTemplate: 'appLayout',
+  layoutTemplate: 'authLayout',
   loadingTemplate: 'loading',
   progressSpinner : false
 });

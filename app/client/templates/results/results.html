@@ -1,0 +1,18 @@
+<template name="results">
+  <hr>
+  <h1>Results for {{term}}</h1>
+  {{#each texts}}
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-body">{{text}}</div>
+        <div class="panel-footer">from <code>{{corpus}}</code></div>
+      </div>
+    </div>
+  {{/each}}
+  {{#if moreResults}}
+    <div id="showMoreResults" style="margin-left: 25px;">
+      <span class="loading">Loading...</span>
+    </div>
+  {{/if}}
+</template>
+
