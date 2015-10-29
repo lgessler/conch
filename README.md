@@ -41,7 +41,7 @@ Find your Meteor port (default should be 3001):
     $ meteor mongo -U
     mongodb://127.0.0.1:3001/meteor
 
-Install dependencies and run:
+Install dependencies and run python script to populate MongoDB:
 
     $ pip3 install pymongo tqdm
     $ python3 populate_db.py data/hmcsample.txt 3001
