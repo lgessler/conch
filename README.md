@@ -1,14 +1,20 @@
 # corpex 
 
-## NOTE (2015-10-27): this app is under heavily development and the readme will probably be out of date.
+** NOTE (2015-10-27): this app is under heavily development and the readme will probably be out of date. **
 
-**corpex (corpus explorer)** is a Meteor app for searching through large
+**corpex (corpus explorer)** is for searching through large
 (billions of tokens) [linguistic corpora](https://en.wikipedia.org/wiki/Corpus_linguistics).
-It is intended to be useful for both language instructors and researchers.
+It is intended to be useful for both language instructors and researchers by
+providing them an easy interface for linguistic corpora which otherwise
+might have remained out of technical reach.
 
 corpex was developed for the 
 [HindMonoCorp](https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0023-6260-A)
 corpus, but it can be adapted for other corpora as well.
+
+#### Components used 
+
+corpex uses Meteor.js with Bootstrap 3 and some supporting Python scripts.
 
 ------------------------
 ### Installation with HindMonoCorp 
