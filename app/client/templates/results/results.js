@@ -22,6 +22,7 @@ Session.setDefault('textsLimit', TEXTS_INCREMENT);
 Deps.autorun(function() {
   var term = Session.get('term');
   var limit = Session.get('textsLimit');
+  console.log(term, limit, "hi");
   Meteor.subscribe('texts', {term: term, limit: limit});
 });
 
