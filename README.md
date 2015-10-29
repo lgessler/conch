@@ -14,7 +14,9 @@ corpus, but it can be adapted for other corpora as well.
 
 #### Components used 
 
-corpex uses Meteor.js with Bootstrap 3 and some supporting Python scripts.
+corpex uses Meteor.js with Bootstrap 3 and some supporting Python scripts. It
+was built on top of [Differential's Meteor Boilerplate
+Lite](https://github.com/Differential/meteor-boilerplate-lite).
 
 ------------------------
 ### Installation with HindMonoCorp 
