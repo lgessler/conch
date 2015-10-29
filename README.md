@@ -13,6 +13,8 @@ corpus, but it can be adapted for other corpora as well.
 ------------------------
 ### Installation with HindMonoCorp 
 
+#### Linux/OSX
+
 First, install Meteor:
 
     $ curl https://install.meteor.com/ | sh
@@ -47,6 +49,11 @@ Install dependencies and run python script to populate MongoDB:
     $ python3 populate_db.py data/hmcsample.txt 3001
 
 You should now be able to navigate to `localhost:3000` and begin querying.
+
+#### Windows
+
+Contact me if you need help and we can figure it out together to fill this
+section out :^)
 
 ------------------------
 
