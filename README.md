@@ -17,6 +17,11 @@ First, install Meteor:
 
     $ curl https://install.meteor.com/ | sh
 
+Clone repo:
+
+    $ git clone https://github.com/lgessler/corpex.git
+    $ cd corpex
+
 Launch Meteor:
 
     $ cd app
