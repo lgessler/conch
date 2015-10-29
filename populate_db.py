@@ -1,16 +1,17 @@
 from pymongo import MongoClient
 from tqdm import *
 from time import sleep
+import sys
 import re
 
 # To find this, run meteor and then type `meteor mongo -U`. 
 # But it's usually meteor's port +1, so try that first.
 port = 3001
 
-client = MongoClient('localhost', port)
-dic = client.meteor.texts
-
 def connection_test():
+    client = MongoClient('localhost', port)
+    dic = client.meteor.texts
+
     d1 = { "Word"       : "DOG"
          , "Definition" : "Canis Familiaris" 
          }
@@ -26,12 +27,16 @@ def connection_test():
     dic.remove({"Word":"DOG"})
     print("The connection to mongo on port {} seems to work.".format(port))
 
-def inject_hindmonocorp_file(filepath='data/hmc/hindmonocorp05.plaintext'):
+def inject_hindmonocorp_file(filepath):
+    client = MongoClient('localhost', port)
+    dic = client.meteor.texts
+    print("Attempting to populate Mongo DB on port {} with lines from {}"
+            .format(port, filepath))
+
     with open(filepath, 'r') as f:
         for line in tqdm(f):
             try:
                 keys = ["corpus", "type", "text",]
-                #keys = ["Word", "type", "Definition",]
                 vals = line.split('\t') 
 
                 # remove newline character
@@ -53,7 +58,19 @@ def inject_hindmonocorp_file(filepath='data/hmc/hindmonocorp05.plaintext'):
                     print("Vals:\t{}".format(vals))
                     print("Raw line:\t{}".format(line))
 
+    print("Successfully populated DB.")
+
+if __name__ == '__main__':
+    if len(sys.argv) not in [2,3]:
+        print("Usage: `python3 populate_db.py <src> [<port>]`")
+        sys.exit(1)
+    src = sys.argv[1]
+    if len(sys.argv) == 3:
+        try:
+            port = int(sys.argv[2])
+        except:
+            print("port doesn't seem to be an int")
+            sys.exit(1)
+    inject_hindmonocorp_file(src)
                     
-#connection_test() 
-inject_hindmonocorp_file('data/hmcsample.txt')
 
