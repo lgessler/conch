@@ -1,4 +1,4 @@
-**NOTE (2015-10-27): this app is under heavy development and the readme will probably be out of date.**
+(note (2015-10-27): this app is under heavy development and the readme will probably be out of date.)
 
 **corpex (corpus explorer)** is for searching through large
 (billions of tokens) [linguistic corpora](https://en.wikipedia.org/wiki/Corpus_linguistics).
