@@ -4,7 +4,14 @@ Template.home.rendered = function() {
 Template.home.events({
   "submit form": function(e) {
     e.preventDefault();
+    var term = $(e.target).find('[name=term]').val();
+    Session.set('prevTerm', term);
+    Router.go('results', {'term': term} );
+  }
+});
 
-    Router.go('results', {'term': $(e.target).find('[name=term]').val()} );
+Template.home.helpers({
+  prevTerm: function() {
+    return Session.get('prevTerm');
   }
 });

@@ -1,0 +1,4 @@
+# Implemented
+* Substring search
+
+# NYI

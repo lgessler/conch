@@ -3,3 +3,11 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.panel-container {
+    max-width:800px;
+}
+
+.form-group {
+    max-width:600px;
+}
