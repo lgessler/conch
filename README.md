@@ -14,9 +14,9 @@ corpus, but it can be adapted for other corpora as well.
 
 Go to [corpex.lgessler.com](http://corpex.lgessler.com). 
 
-Right now corpex works by matching regular expressions against raw text. So to find all the instances of हमें at the end of a sentence, we'd enter हमें[\s+]?[.!?।] into the search bar and [let it rip!](http://corpex.lgessler.com/results/%E0%A4%B9%E0%A4%AE%E0%A5%87%E0%A4%82%5B%5Cs%2B%5D%3F%5B.!%3F%E0%A5%A4%5D)
+Right now corpex works by matching regular expressions against raw text. So to find all the instances of चाहता at the end of a sentence, we'd enter चाहता[\s+]?[.!?।] into the search bar and [let it rip!](http://corpex.lgessler.com/results/%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE%5B%5Cs%2B%5D%3F%5B.!%3F%E0%A5%A4%5D)
 
-(Note: the inverted index has not been implemented yet, searches *will* be *absurdly* slow.)
+(Note: the inverted index has not been implemented yet (2015-10-30), so searches *will* be *absurdly* slow.)
 
 #### Components used 
 
