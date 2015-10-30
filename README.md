@@ -10,6 +10,14 @@ corpex was developed for the
 [HindMonoCorp](https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0023-6260-A)
 corpus, but it can be adapted for other corpora as well.
 
+#### Demo
+
+Go to [corpex.lgessler.com](http://corpex.lgessler.com). 
+
+Right now corpex works by matching regular expressions against raw text. So to find all the instances of हमें at the end of a sentence, we'd enter हमें[\s+]?[.!?।] into the search bar and [let it rip!](http://corpex.lgessler.com/results/%E0%A4%B9%E0%A4%AE%E0%A5%87%E0%A4%82%5B%5Cs%2B%5D%3F%5B.!%3F%E0%A5%A4%5D)
+
+(Note: the inverted index has not been implemented yet, searches *will* be *absurdly* slow.)
+
 #### Components used 
 
 corpex uses Meteor.js with Bootstrap 3 and some supporting Python scripts. It
