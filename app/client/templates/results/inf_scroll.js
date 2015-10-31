@@ -1,4 +1,4 @@
-var TEXTS_INCREMENT = 20;
+var TEXTS_INCREMENT = 2000;
 // temporarily make it huge, lower in the future
 Session.setDefault('textsLimit', 2000 + TEXTS_INCREMENT);
 Deps.autorun(function() {
