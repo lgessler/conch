@@ -1,10 +1,14 @@
 var TEXTS_INCREMENT = 2000;
 // temporarily make it huge, lower in the future
 Session.setDefault('textsLimit', 2000 + TEXTS_INCREMENT);
+
+// This is run every time one of the variables has been changed.
 Deps.autorun(function() {
   var term = Session.get('term');
   var limit = Session.get('textsLimit');
-  console.log(term, limit, "hi");
+  if (!term)
+    return;
+  console.log(term, limit, "Deps.autorun function has been run.");
   Meteor.subscribe('texts', {term: term, limit: limit});
 });
 
