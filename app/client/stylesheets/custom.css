@@ -11,3 +11,8 @@
 .form-group {
     max-width:600px;
 }
+
+/* To keep navbar from overlapping page */
+.text-center {
+    padding-top: 50px;
+}
