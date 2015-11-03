@@ -14,6 +14,6 @@ Router.route('results', {
   waitOn: function() {
     var term = Session.get('term');
     var limit = Session.get('textsLimit');
-    Meteor.subscribe('texts', {term: term, limit: limit});
+    return Meteor.subscribe('texts', {term: term, limit: limit});
   }
 });
