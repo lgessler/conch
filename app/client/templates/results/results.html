@@ -1,22 +1,10 @@
 <template name="results">
   <h1>Results for {{term}}</h1>
   {{#each texts}}
-    <div class="container panel-container">
-      <div class="panel panel-default">
-        <div class="panel-header">Result #{{index}}</div>
-        <div class="panel-body">
-          <p style="font-size:28px">
-            {{{text}}}
-          </p>
-        </div>
-        <div class="panel-footer">from <code>{{corpus}}</code></div>
-      </div>
-    </div>
+    {{> resultItem}}
   {{/each}}
   {{#if moreResults}}
-    <div id="showMoreResults" style="margin-left: 25px;">
-      <span class="loading">Loading...</span>
-    </div>
+    {{> loading}}
   {{/if}}
 </template>
 

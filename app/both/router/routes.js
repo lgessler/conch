@@ -7,11 +7,9 @@ Router.route('results', {
   name: 'results',
   path: '/results/:term',
   template: 'results',
-  onBeforeAction: function() {
-    Session.set('term', this.params.term);
-    this.next();
-  },
+  progress: false,
   waitOn: function() {
+    Session.set('term', this.params.term);
     var term = Session.get('term');
     var limit = Session.get('textsLimit');
     return Meteor.subscribe('texts', {term: term, limit: limit});
