@@ -3,6 +3,7 @@ Router.configure({
   //layoutTemplate: 'appLayout',
   layoutTemplate: 'authLayout',
   loadingTemplate: 'loading',
+  notFoundTemplate: 'notFound',
   progressSpinner : false
 });
 
