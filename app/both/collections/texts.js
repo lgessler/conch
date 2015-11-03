@@ -9,6 +9,14 @@ Texts = new Meteor.Collection("texts");
 // Collection Hooks https://github.com/matb33/meteor-collection-hooks
 
 if (Meteor.isServer) {
+  // Basic idea: check for duplicates by hashing and checking for a collision.
+  // http://stackoverflow.com/questions/9229645/remove-duplicates-from-javascript-array
+  function suppressDuplicates(textList) {
+    var seen = {};
+    return textList.filter(function(text) {
+      return seen.hasOwnProperty(text.text) ? false : (seen[text.text] = true);
+    });
+  }
   Meteor.publish('texts', function(params) {
     //ids = ids.map(function(id) { return ObjectId(id); });
     console.log(params);
@@ -16,6 +24,7 @@ if (Meteor.isServer) {
     console.log(arg1);
     var coll = Texts.find(arg1, { limit: params.limit }); //TODO: modify this line
     console.log(coll.fetch());
+    coll = suppressDuplicates(coll);
     return coll;
   });
 }
