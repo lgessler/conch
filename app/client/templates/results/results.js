@@ -1,5 +1,12 @@
 self = this;
 
+function suppressDuplicates(textList) {
+  var seen = {};
+  return textList.filter(function(text) {
+    return seen.hasOwnProperty(text.text) ? false : (seen[text.text] = true);
+  });
+}
+
 Template.results.helpers({
   moreResults: function() {
     // If, once the subscription is ready, we have less rows than we
@@ -8,6 +15,7 @@ Template.results.helpers({
   },
   texts: function() {
     var coll = Texts.find().fetch();
+    coll = suppressDuplicates(coll);
     var index = 0;
     coll.forEach(function(text) {
       var term = Session.get('term');
@@ -15,6 +23,7 @@ Template.results.helpers({
       text.index = index;
       index += 1;
     });
+
     return coll;
   },
   term: function() {
