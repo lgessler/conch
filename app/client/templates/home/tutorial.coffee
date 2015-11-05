@@ -15,7 +15,6 @@ Template.home.helpers
   options:
     id: "myCoolTutorial"
     steps: tutorialSteps
-    emitter: new EventEmitter()
     onFinish: ->
       Session.set "tutorialNotFinished", false
   tutorialNotFinished: ->
