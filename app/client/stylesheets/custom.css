@@ -4,23 +4,73 @@
     margin-right: auto;
 }
 
+/* for results */
 .panel-container {
     max-width:800px;
 }
 
+/* for query input */
 .form-group {
     max-width:600px;
 }
 
-/* To keep navbar from overlapping page */
-.text-center {
-    padding-top: 70px;
+.btn-submit {
+    width: 600px;
+    height: 36px;
+    font-size: 18px;
 }
+#term {
+    height:60px;
+    font-size:36px;
+}
+
+/* stretch to bottom */
+html {
+    height:100vh;
+}
+body {
+    height:100vh;
+}
+
+/* background image */
+#background {
+    padding-top: 70px;
+    background: url(http://c2.staticflickr.com/4/3665/12247723834_86332a8860_k.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+
+    margin: 0;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* To keep navbar from overlapping page */
+#main {
+    padding-top: 70px;
+    height: 100%;
+}
+
+.template-home {
+    padding-top: 130px;
+}
+
 
 .loading-icon-holder {
     padding-top: 200px;
 }
 
-#term {
-    size: 25;
-}
+
+
+

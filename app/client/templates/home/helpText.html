@@ -1,12 +1,7 @@
 <template name="helpText">
-  <div align="left">
-    <p>Searching is easy. Simply type whatever Hindi phrase (or any string of characters, really) you want to find, and
-    corpex will find all occurrences of it for you.</p>
-    <p>And if you want to get <i>fancy</i>, you can use regular expressions to give your searches more power. For example,
-    if we wanted to find every occurrence of "हो जाए", we could enter this.</p>
-    <p align="center" style="font-size:24px;">हो जा(ए|य|ये)[ ।.?!,]</p>
-    <p>The part in parentheses captures all of the orthographic variants of हो जाए. The part in square brackets ensures
-    that जाए is followed by a word boundary.</p>
+  <div align="justify" style="">
+    <p><i>Hint</i>: you can use regular expressions to give your searches more power. For example, हो जा(ए|य|ये)[ ।.?!,]
+      yields all orthographic variants for हो जाए.</p>
     <p>For an excellent introduction to regular expressions, see
       <a href="http://www.deepsky.com/~merovech/voynich/voynich_manchu_reference_materials/PDFs/jurafsky_martin.pdf#page=46" target="_blank">
      Jurafsky's textbook chapter</a>. If you just want a cheat sheet,
