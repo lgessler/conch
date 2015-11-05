@@ -4,12 +4,22 @@
     <div class="page-header">
     </div>
     -->
-    <form>
-      <div class="form-group center">
-        <label for="term">Search Terms:</label>
-        <input name="term" id="term" type="text" class="form-control" value={{prevTerm}}>
+    <div class="row">
+      <div class="col-md-8">
+        <form>
+          <div class="form-group center">
+            <label for="term">Query: </label>
+            <input name="term" id="term" type="text" class="form-control" placeholder="किया गया है" value={{prevTerm}}>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+      <div class="col-md-4">
+        {{> helpText}}
+      </div>
+    </div>
   </div>
+  {{#if tutorialNotFinished}}
+    {{> tutorial options}}
+  {{/if}}
 </template>
