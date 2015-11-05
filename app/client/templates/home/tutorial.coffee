@@ -2,8 +2,6 @@ tutorialSteps = [
     template: "tutorial_1"
   ,
     template: "tutorial_2"
-  ,
-    template: "tutorial_3"
     spot: ".form-group"
     #require:
     #  event: "something-emitted"
