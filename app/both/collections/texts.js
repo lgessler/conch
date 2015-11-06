@@ -13,11 +13,18 @@ if (Meteor.isServer) {
   // http://stackoverflow.com/questions/9229645/remove-duplicates-from-javascript-array
 
   Meteor.publish('texts', function(params) {
-    //ids = ids.map(function(id) { return ObjectId(id); });
     console.log(params);
+
+    // Note: if you're behind a reverse proxy, this will return the address of
+    // your proxy. To solve this, set the environment variable
+    // HTTP_FORWARDED_COUNT before launching meteor. E.g.,
+    //     export HTTP_FORWARDED_COUNT=1
+    //     meteor
+    // Cf. https://github.com/mizzao/meteor-user-status/issues/48
     console.log('This request came from ' + this.connection.clientAddress); 
+
     var arg1 = { text: new RegExp(params.term) };
-    var coll = Texts.find(arg1, { limit: params.limit }); //TODO: modify this line
+    var coll = Texts.find(arg1, { limit: params.limit }); 
     return coll;
   });
 }
