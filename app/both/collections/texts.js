@@ -15,8 +15,8 @@ if (Meteor.isServer) {
   Meteor.publish('texts', function(params) {
     //ids = ids.map(function(id) { return ObjectId(id); });
     console.log(params);
+    console.log('This request came from ' + this.connection.clientAddress); 
     var arg1 = { text: new RegExp(params.term) };
-    console.log(arg1);
     var coll = Texts.find(arg1, { limit: params.limit }); //TODO: modify this line
     return coll;
   });
