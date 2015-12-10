@@ -28,7 +28,7 @@ def inject_hindmonocorp_file(filepath):
 
             dic.insert({
                 "text": vals[2],
-                "corpus": vals[1],
+                "corpus": vals[0],
                 "date": None,
                 "url": None
             })
