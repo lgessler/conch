@@ -20,33 +20,40 @@ if (Meteor.isServer) {
   // http://stackoverflow.com/questions/9229645/remove-duplicates-from-javascript-array
 
   Meteor.publish('texts', function(params) {
-    console.log(params);
+    /*  Note: if you're behind a reverse proxy, this will return the address of
+     *  your proxy. To solve this, set the environment variable
+     *  HTTP_FORWARDED_COUNT before launching meteor. E.g.,
+     *     export HTTP_FORWARDED_COUNT=1
+     *     meteor
+     *  Cf. https://github.com/mizzao/meteor-user-status/issues/48
+     */
+    console.log('Got a request for ' + params['term'] + ' from ' + this.connection.clientAddress);
 
     // from server/imports.js
-    var matches = new Future();
-    HTTP.call('POST', 'http://127.0.0.1:6767', {
-      data: { "val": params['term'] }
-    }, function (error, response) {
-      if (error) {
-        matches.throw(error);
-      } else {
-        matches.return(response['data']['results']);
-      }
-    });
-    matches.wait();
-    matches = matches['value'];
-    console.log(matches);
+    var matches = [new Future(), new Future(), new Future(), new Future(), new Future(), new Future(), new Future()];
 
-   /*  Note: if you're behind a reverse proxy, this will return the address of
-    *  your proxy. To solve this, set the environment variable
-    *  HTTP_FORWARDED_COUNT before launching meteor. E.g.,
-    *     export HTTP_FORWARDED_COUNT=1
-    *     meteor
-    *  Cf. https://github.com/mizzao/meteor-user-status/issues/48
-    */
-    console.log('This request came from ' + this.connection.clientAddress); 
+    for (var i = 6113; i <= 6119; i += 1) {
+      HTTP.call('POST', 'http://192.0.0.197:' + i, {
+        //HTTP.call('POST', 'http://192.168.0.197:6767', {
+        data: {"val": params['term']}
+      }, function (error, response) {
+        if (error) {
+          matches[i - 6113].throw(error);
+        } else {
+          matches[i - 6113].return(response['data']['results']);
+        }
+      });
+    }
 
-    var arg1 = { text: {$in: matches} };
+    for (var i = 0; i < matches.length; i++) {
+      matches[i].wait();
+    }
+    var results = [];
+    for (var i = 0; i < matches.length; i++) {
+      results = result.concat(matches['value']);
+    }
+
+    var arg1 = { text: {$in: results} };
     var coll = Texts.find(arg1, { limit: params.limit }); 
     return coll;
   });
