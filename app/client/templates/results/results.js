@@ -14,8 +14,10 @@ Template.results.helpers({
     return !(Texts.find().count() < Session.get("textsLimit"));
   },
   texts: function() {
+    console.log("Trying to find texts...");
     var coll = Texts.find().fetch();
-    coll = suppressDuplicates(coll);
+    console.log(coll);
+    //coll = suppressDuplicates(coll);
     var index = 0;
     coll.forEach(function(text) {
       var term = Session.get('term');

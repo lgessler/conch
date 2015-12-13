@@ -30,31 +30,127 @@ if (Meteor.isServer) {
     console.log('Got a request for ' + params['term'] + ' from ' + this.connection.clientAddress);
 
     // from server/imports.js
-    var matches = [new Future(), new Future(), new Future(), new Future(), new Future(), new Future(), new Future()];
+    //var matches0 = new Future();
+    var matches1 = new Future();
+    var matches2 = new Future();
+    var matches3 = new Future();
+    var matches4 = new Future();
+    var matches5 = new Future();
+    var matches6 = new Future();
+    var matches7 = new Future();
 
-    for (var i = 6113; i <= 6119; i += 1) {
-      HTTP.call('POST', 'http://192.0.0.197:' + i, {
-        //HTTP.call('POST', 'http://192.168.0.197:6767', {
-        data: {"val": params['term']}
-      }, function (error, response) {
-        if (error) {
-          matches[i - 6113].throw(error);
-        } else {
-          matches[i - 6113].return(response['data']['results']);
-        }
-      });
-    }
+/*
+    HTTP.call('POST', 'http://127.0.0.1:6112', {
+      data: {"val": params['term']}
+    }, function (error, response) {
+      if (error) {
+        matches0.throw(error);
+      } else {
+        matches0.return(response.data.results);
+      }
+    });
+*/
 
-    for (var i = 0; i < matches.length; i++) {
-      matches[i].wait();
-    }
+    HTTP.call('POST', 'http://127.0.0.1:6113', {
+      data: {"val": params['term']}
+    }, function (error, response) {
+      if (error) {
+        matches1.throw(error);
+      } else {
+        console.log("Received response from shard 1");
+        matches1.return(response.data.results);
+      }
+    });
+
+    HTTP.call('POST', 'http://127.0.0.1:6114', {
+      data: {"val": params['term']}
+    }, function (error, response) {
+      if (error) {
+        matches2.throw(error);
+      } else {
+        console.log("Received response from shard 2");
+        matches2.return(response.data.results);
+      }
+    });
+
+    HTTP.call('POST', 'http://127.0.0.1:6115', {
+      data: {"val": params['term']}
+    }, function (error, response) {
+      if (error) {
+        matches3.throw(error);
+      } else {
+        console.log("Received response from shard 3");
+        matches3.return(response.data.results);
+      }
+    });
+
+    HTTP.call('POST', 'http://127.0.0.1:6116', {
+      data: {"val": params['term']}
+    }, function (error, response) {
+      if (error) {
+        matches4.throw(error);
+      } else {
+        console.log("Received response from shard 4");
+        matches4.return(response.data.results);
+      }
+    });
+
+    HTTP.call('POST', 'http://127.0.0.1:6117', {
+      data: {"val": params['term']}
+    }, function (error, response) {
+      if (error) {
+        matches5.throw(error);
+      } else {
+        console.log("Received response from shard 5");
+        matches5.return(response.data.results);
+      }
+    });
+
+    HTTP.call('POST', 'http://127.0.0.1:6118', {
+      data: {"val": params['term']}
+    }, function (error, response) {
+      if (error) {
+        matches6.throw(error);
+      } else {
+        console.log("Received response from shard 6");
+        matches6.return(response.data.results);
+      }
+    });
+
+    HTTP.call('POST', 'http://127.0.0.1:6119', {
+      data: {"val": params['term']}
+    }, function (error, response) {
+      if (error) {
+        matches7.throw(error);
+      } else {
+        console.log("Received response from shard 7");
+        matches7.return(response.data.results);
+      }
+    });
+
+    //matches0.wait();
+    matches1.wait();
+    matches2.wait();
+    matches3.wait();
+    matches4.wait();
+    matches5.wait();
+    matches6.wait();
+    matches7.wait();
     var results = [];
-    for (var i = 0; i < matches.length; i++) {
-      results = result.concat(matches['value']);
-    }
+    //results = results.concat(matches0);
+    results = results.concat(matches1);
+    results = results.concat(matches2);
+    results = results.concat(matches3);
+    results = results.concat(matches4);
+    results = results.concat(matches5);
+    results = results.concat(matches6);
+    results = results.concat(matches7);
+
+    console.log("These are the results");
+    console.log(results);
 
     var arg1 = { text: {$in: results} };
-    var coll = Texts.find(arg1, { limit: params.limit }); 
-    return coll;
+    console.log("Fetching the resulting texts from Mongo");
+    return Texts.find(arg1, { limit: params.limit });
   });
 }
