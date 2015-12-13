@@ -138,13 +138,13 @@ if (Meteor.isServer) {
     matches7.wait();
     var results = [];
     //results = results.concat(matches0);
-    results = results.concat(matches1);
-    results = results.concat(matches2);
-    results = results.concat(matches3);
-    results = results.concat(matches4);
-    results = results.concat(matches5);
-    results = results.concat(matches6);
-    results = results.concat(matches7);
+    results = results.concat(matches1.value);
+    results = results.concat(matches2.value);
+    results = results.concat(matches3.value);
+    results = results.concat(matches4.value);
+    results = results.concat(matches5.value);
+    results = results.concat(matches6.value);
+    results = results.concat(matches7.value);
 
     console.log("These are the results");
     console.log(results);
