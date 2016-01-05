@@ -9,7 +9,11 @@ Deps.autorun(function() {
   if (!term)
     return;
   console.log(term, limit, "Deps.autorun function has been run.");
-  Meteor.subscribe('texts', {term: term, limit: limit});
+  Meteor.subscribe('texts',
+    {
+      term: term,
+      limit: limit
+    });
 });
 
 

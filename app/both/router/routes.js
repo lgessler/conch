@@ -10,6 +10,11 @@ Router.route('results', {
   progress: false,
   waitOn: function() {
     Session.set('term', this.params.term);
-    return Meteor.subscribe('texts', {term: this.params.term, limit: Session.get('textsLimit')});
+    var term = this.params.term;
+    return Meteor.subscribe('texts',
+      {
+        term: term,
+        limit: Session.get('textsLimit')
+      });
   }
 });

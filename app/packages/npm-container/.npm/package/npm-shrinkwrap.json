@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "regex-trigram": {
+      "version": "0.0.9"
+    }
+  }
+}

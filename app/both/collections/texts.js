@@ -29,128 +29,33 @@ if (Meteor.isServer) {
      */
     console.log('Got a request for ' + params['term'] + ' from ' + this.connection.clientAddress);
 
-    // from server/imports.js
-    //var matches0 = new Future();
-    var matches1 = new Future();
-    var matches2 = new Future();
-    var matches3 = new Future();
-    var matches4 = new Future();
-    var matches5 = new Future();
-    var matches6 = new Future();
-    var matches7 = new Future();
+    // See server/invertedIndex.js
+    var docIdList,
+      mongoQuery;
+    try {
+      var query = regexTrigram.query(regexTrigram.parse(params['term']));
+      docIdList = processQuery(query);
+      mongoQuery = {
+        _id: {$in: docIdList},
+        text: new RegExp(params['term'])
+      };
+    } catch (e) {
+      console.log("Error processing query for term", "\"" + params["term"] + "\"", "\n Error object:", e.stack);
+      console.log("Falling back to normal regular expression query over the entire corpus.");
+      mongoQuery = {
+        text: new RegExp(params['term'])
+      };
+    }
 
-/*
-    HTTP.call('POST', 'http://127.0.0.1:6112', {
-      data: {"val": params['term']}
-    }, function (error, response) {
-      if (error) {
-        matches0.throw(error);
+    var coll = Texts.find(mongoQuery, { limit: params.limit });
+    if (mongoQuery["_id"]) {
+      var coll2 = Texts.find({text: mongoQuery['text']}, {limit: params.limit });
+      if (coll.count() === coll2.count()) {
+        console.log("Collections match in size!");
       } else {
-        matches0.return(response.data.results);
+        console.log("Collections don't match in size--coll has", coll.count(), "while coll2 has", coll2.count());
       }
-    });
-*/
-
-    HTTP.call('POST', 'http://127.0.0.1:6113', {
-      data: {"val": params['term']}
-    }, function (error, response) {
-      if (error) {
-        matches1.throw(error);
-      } else {
-        console.log("Received response from shard 1");
-        matches1.return(response.data.results);
-      }
-    });
-
-    HTTP.call('POST', 'http://127.0.0.1:6114', {
-      data: {"val": params['term']}
-    }, function (error, response) {
-      if (error) {
-        matches2.throw(error);
-      } else {
-        console.log("Received response from shard 2");
-        matches2.return(response.data.results);
-      }
-    });
-
-    HTTP.call('POST', 'http://127.0.0.1:6115', {
-      data: {"val": params['term']}
-    }, function (error, response) {
-      if (error) {
-        matches3.throw(error);
-      } else {
-        console.log("Received response from shard 3");
-        matches3.return(response.data.results);
-      }
-    });
-
-    HTTP.call('POST', 'http://127.0.0.1:6116', {
-      data: {"val": params['term']}
-    }, function (error, response) {
-      if (error) {
-        matches4.throw(error);
-      } else {
-        console.log("Received response from shard 4");
-        matches4.return(response.data.results);
-      }
-    });
-
-    HTTP.call('POST', 'http://127.0.0.1:6117', {
-      data: {"val": params['term']}
-    }, function (error, response) {
-      if (error) {
-        matches5.throw(error);
-      } else {
-        console.log("Received response from shard 5");
-        matches5.return(response.data.results);
-      }
-    });
-
-    HTTP.call('POST', 'http://127.0.0.1:6118', {
-      data: {"val": params['term']}
-    }, function (error, response) {
-      if (error) {
-        matches6.throw(error);
-      } else {
-        console.log("Received response from shard 6");
-        matches6.return(response.data.results);
-      }
-    });
-
-    HTTP.call('POST', 'http://127.0.0.1:6119', {
-      data: {"val": params['term']}
-    }, function (error, response) {
-      if (error) {
-        matches7.throw(error);
-      } else {
-        console.log("Received response from shard 7");
-        matches7.return(response.data.results);
-      }
-    });
-
-    //matches0.wait();
-    matches1.wait();
-    matches2.wait();
-    matches3.wait();
-    matches4.wait();
-    matches5.wait();
-    matches6.wait();
-    matches7.wait();
-    var results = [];
-    //results = results.concat(matches0);
-    results = results.concat(matches1.value);
-    results = results.concat(matches2.value);
-    results = results.concat(matches3.value);
-    results = results.concat(matches4.value);
-    results = results.concat(matches5.value);
-    results = results.concat(matches6.value);
-    results = results.concat(matches7.value);
-
-    console.log("These are the results");
-    console.log(results);
-
-    var arg1 = { text: {$in: results} };
-    console.log("Fetching the resulting texts from Mongo");
-    return Texts.find(arg1, { limit: params.limit });
+    }
+    return coll;
   });
 }
