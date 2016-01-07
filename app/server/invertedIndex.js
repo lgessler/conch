@@ -4,6 +4,7 @@ var invertedIndex = {};
 
 console.log("Constructing inverted index...");
 
+var numTrigrams = 0;
 Texts.find().forEach( function(doc) {
   var docId = doc._id;
   var text = doc.text;
@@ -14,9 +15,10 @@ Texts.find().forEach( function(doc) {
       invertedIndex[trigram].push(docId);
     } else {
       invertedIndex[trigram] = [docId];
+      numTrigrams += 1;
     }
   }
-  console.log("Processed doc. Trigrams: ", invertedIndex.length);
+  console.log("Processed doc. Trigrams: ", numTrigrams);
 });
 
 console.log("Found", Object.keys(invertedIndex).length, "trigrams in", Texts.find().count(), "docs.");
