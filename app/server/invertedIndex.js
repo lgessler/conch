@@ -16,6 +16,7 @@ Texts.find().forEach( function(doc) {
       invertedIndex[trigram] = [docId];
     }
   }
+  console.log("Processed doc. Trigrams: ", invertedIndex.length);
 });
 
 console.log("Found", Object.keys(invertedIndex).length, "trigrams in", Texts.find().count(), "docs.");
