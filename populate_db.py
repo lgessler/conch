@@ -15,6 +15,7 @@ def inject_hindmonocorp_file(filepath):
             .format(port, filepath))
 
     keys = ["text", "corpus", "date", "url"]
+    _custom_id_counter = 0
     with open(filepath, 'r') as f:
         for line in tqdm(f):
             vals = line.split('\t') 
@@ -30,8 +31,10 @@ def inject_hindmonocorp_file(filepath):
                 "text": vals[2],
                 "corpus": vals[0],
                 "date": None,
-                "url": None
+                "url": None,
+                "_custom_id": _custom_id_counter
             })
+            _custom_id_counter += 1
 
     print("Successfully populated DB.")
 

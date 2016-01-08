@@ -36,7 +36,7 @@ if (Meteor.isServer) {
       var query = regexTrigram.query(regexTrigram.parse(params['term']));
       docIdList = processQuery(query);
       mongoQuery = {
-        _id: {$in: docIdList},
+        _custom_id: {$in: docIdList},
         text: new RegExp(params['term'])
       };
     } catch (e) {
@@ -48,7 +48,7 @@ if (Meteor.isServer) {
     }
 
     var coll = Texts.find(mongoQuery, { limit: params.limit });
-    if (mongoQuery["_id"]) {
+    if (mongoQuery["_custom_id"]) {
       var coll2 = Texts.find({text: mongoQuery['text']}, {limit: params.limit });
       if (coll.count() === coll2.count()) {
         console.log("Collections match in size!");

@@ -6,8 +6,9 @@ console.log("Constructing inverted index...");
 
 var numTrigrams = 0,
   docNum = 0;
+
 Texts.find().forEach( function(doc) {
-  var docId = doc._id;
+  var docId = doc._custom_id;
   var text = doc.text;
   var docLength = doc.text.length;
   for (var i = 0; i < docLength - 2; i++) {
