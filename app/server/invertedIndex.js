@@ -1,7 +1,11 @@
 // Ensure docs are indexed by _custom_id
+
+console.log("Building Mongo index...");
 Meteor.startup(function() {
   Texts._ensureIndex( {"_custom_id": 1} );
+  //Texts._ensureIndex( {"_custom_id": 1, "text": 1} );
 });
+console.log("Done building Mongo index.");
 
 // Build inverted index
 
