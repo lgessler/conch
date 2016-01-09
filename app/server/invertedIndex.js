@@ -22,7 +22,7 @@ Texts.find().forEach( function(doc) {
   var docLength = doc.text.length;
   for (var i = 0; i < docLength - 2; i++) {
     var trigram = text.substring(i, i + 3);
-    if (trigram in invertedIndex) {
+    if (trigram in invertedIndex && !(docId in invertedIndex[trigram])) {
       invertedIndex[trigram].push(docId);
     } else {
       invertedIndex[trigram] = [docId];
