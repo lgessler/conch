@@ -1,3 +1,8 @@
+// Ensure docs are indexed by _custom_id
+Meteor.startup(function() {
+  Texts._ensureIndex( {"_custom_id": 1} );
+});
+
 // Build inverted index
 
 var invertedIndex = {};
@@ -21,7 +26,8 @@ Texts.find().forEach( function(doc) {
     }
   }
   docNum += 1;
-  console.log("Processed doc", docNum, ". Trigrams: ", numTrigrams);
+  if (!(docNum % 10000))
+    console.log("Processed doc", docNum, ". Trigrams: ", numTrigrams);
 });
 
 console.log("Found", Object.keys(invertedIndex).length, "trigrams in", Texts.find().count(), "docs.");
@@ -48,6 +54,7 @@ processQuery = function(q) {
   }
 
 
+  console.log(JSON.stringify(q,null,2));
   switch (q["op"]) {
     case "AND":
       if (docIdLists.length === 0)
