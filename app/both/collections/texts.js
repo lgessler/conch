@@ -12,6 +12,14 @@
 // To populate this, use the python script outside the app folder.
 Texts = new Meteor.Collection("texts");
 
+// Ensure docs are indexed by _custom_id
+console.log("Building Mongo index...");
+Meteor.startup(function() {
+  Texts._ensureIndex( {"_custom_id": 1} );
+  //Texts._ensureIndex( {"_custom_id": 1, "text": 1} );
+});
+console.log("Done building Mongo index.");
+
 // Collection Helpers https://github.com/dburles/meteor-collection-helpers
 // Collection Hooks https://github.com/matb33/meteor-collection-hooks
 

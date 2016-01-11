@@ -1,44 +1,60 @@
-// Ensure docs are indexed by _custom_id
-
-console.log("Building Mongo index...");
-Meteor.startup(function() {
-  Texts._ensureIndex( {"_custom_id": 1} );
-  //Texts._ensureIndex( {"_custom_id": 1, "text": 1} );
-});
-console.log("Done building Mongo index.");
 
 // Build inverted index
 
-var invertedIndex = {};
+if (InvertedIndex.find().count() === 0) {
+  console.log("InvertedIndex is empty. Constructing inverted index...");
 
-console.log("Constructing inverted index...");
+  var docNum = 0,
+    buffer = {};
 
-var numTrigrams = 0,
-  docNum = 0;
+  Texts.find().forEach(function (doc) {
+    var docId = doc._custom_id;
+    var text = doc.text;
+    var docLength = doc.text.length;
 
-Texts.find().forEach( function(doc) {
-  var docId = doc._custom_id;
-  var text = doc.text;
-  var docLength = doc.text.length;
-  for (var i = 0; i < docLength - 2; i++) {
-    var trigram = text.substring(i, i + 3);
-    if (trigram in invertedIndex && !(docId in invertedIndex[trigram])) {
-      invertedIndex[trigram].push(docId);
-    } else {
-      invertedIndex[trigram] = [docId];
-      numTrigrams += 1;
+    // keep track of trigrams we've already seen in this doc
+    var alreadyAdded = [];
+    for (var i = 0; i < docLength - 2; i++) {
+      var trigram = text.substring(i, i + 3);
+
+      if (buffer[trigram] && !(trigram in alreadyAdded)) {
+        buffer[trigram].push(docId);
+      } else {
+        buffer[trigram] = [docId];
+      }
+      alreadyAdded.push(trigram);
     }
-  }
-  docNum += 1;
-  if (!(docNum % 10000))
-    console.log("Processed doc", docNum, ". Trigrams: ", numTrigrams);
-});
+    docNum += 1;
 
-console.log("Found", Object.keys(invertedIndex).length, "trigrams in", Texts.find().count(), "docs.");
+    if (!(docNum % 10000)) {
+      // Every 10000 docs, bulk write to Mongo
+      console.log("Bulk writing past 10000 docs to Mongo...");
+      var bulk = InvertedIndex._collection.rawCollection().initializeUnorderedBulkOp();
+
+      Object.keys(buffer).forEach(function(trigram, i) {
+        // Find element with trigram if it exists, otherwise create it
+        bulk.find({trigram: trigram}).upsert().updateOne({
+          $setOnInsert: { trigram: trigram },
+          $push: { docs: { $each: buffer[trigram] } }
+        });
+        if (!(i%1000))
+          console.log("Staged bulk op #", i);
+      });
+      bulk.execute();
+
+      console.log("Processed doc", docNum, ". Trigrams: ", InvertedIndex.find().count());
+      buffer = {};
+    }
+  });
+
+  console.log("Found", InvertedIndex.find().count(), "trigrams in", Texts.find().count(), "docs.");
+}
+
+console.log(InvertedIndex.find({}, {limit: 5}).fetch());
 
 // Takes in query sent by client and narrows down number of docs in the inverted index to search.
-processQuery = function(q) {
-  // Array of values (other arrays) from the invertedIndex
+processQuery = function (q) {
+  // Array of values (other arrays) from the InvertedIndex
   var i,
     j,
     subQueries = q["sub"],
@@ -53,12 +69,11 @@ processQuery = function(q) {
   }
 
   for (i = 0; i < trigramListLen; i++) {
-    docIdLists.push(invertedIndex[trigramList[i]]);
-    //console.log(docIdLists[docIdLists.length-1]);
+    docIdLists.push(InvertedIndex.findOne({trigram: trigramList[i]}).docs);
   }
 
 
-  console.log(JSON.stringify(q,null,2));
+  console.log(JSON.stringify(q, null, 2));
   switch (q["op"]) {
     case "AND":
       if (docIdLists.length === 0)
@@ -107,3 +122,4 @@ processQuery = function(q) {
   console.log(JSON.stringify(q, null, 2));
   return resultList;
 };
+
