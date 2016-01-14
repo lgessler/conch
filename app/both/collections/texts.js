@@ -55,6 +55,7 @@ if (Meteor.isServer) {
       };
     }
 
+    /* test for correctness
     var coll = Texts.find(mongoQuery, { limit: params.limit });
     if (mongoQuery["_custom_id"]) {
       var coll2 = Texts.find({text: mongoQuery['text']}, {limit: params.limit });
@@ -63,7 +64,9 @@ if (Meteor.isServer) {
       } else {
         console.log("Collections don't match in size--coll has", coll.count(), "while coll2 has", coll2.count());
       }
-    }
+    } */
+
+    var coll = Texts.find(mongoQuery, {limit: params.limit });
     return coll;
   });
 }

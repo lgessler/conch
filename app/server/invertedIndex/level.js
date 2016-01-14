@@ -6,7 +6,7 @@ var db = Level("/Users/lukegessler/Sync/playground/corpex/leveldb");
 
 Meteor.methods({
   'getDocIds': function getDocIds(trigram) {
-    var str = Async.runSync(function(done) {
+    var future = Async.runSync(function(done) {
       db.get(trigram, function(err, val) {
         if (err) done(err, null);
         done(null, val);
@@ -14,7 +14,7 @@ Meteor.methods({
     });
 
     // parse str
-    var strArray = str.result.split(',');
+    var strArray = future.result.split(',');
     return strArray;
   }
 });

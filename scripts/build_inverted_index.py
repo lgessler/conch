@@ -15,6 +15,21 @@ port = 3001
 # Write files into tmp folder
 basename = os.path.join('/tmp/', uuid.uuid4().hex)
 
+def flush_buffer(buffer, level):
+    print("\nWriting buffer to disk...", end=" ")
+    for k,v in buffer.items():
+        encoded_key = k.encode('utf-8')
+        new_bytes = (','.join(map(str,v))).encode('utf-8')
+        try:
+            old_bytes = level.Get(k.encode('utf-8'))
+            old_and_new_bytes = old_bytes + ','.encode('utf-8') + new_bytes
+            level.Put( encoded_key, old_and_new_bytes )
+        except KeyError:
+            level.Put( encoded_key, new_bytes )
+
+    print("Done.")
+
+
 def write_to_leveldb():
     mongo = MongoClient('localhost', port)
     coll = mongo.meteor.texts
@@ -42,22 +57,12 @@ def write_to_leveldb():
 
         #if sys.getsizeof(buffer) >= 512000000:
         if sys.getsizeof(buffer) >= 1400000:
-            print("\nWriting buffer to disk...", end=" ")
-            for k,v in buffer.items():
-                encoded_key = k.encode('utf-8')
-                new_bytes = (','.join(map(str,v))).encode('utf-8')
-                try:
-                    old_bytes = level.Get(k.encode('utf-8'))
-                    old_and_new_bytes = old_bytes + ','.encode('utf-8') + new_bytes
-                    level.Put( encoded_key, old_and_new_bytes )
-                except KeyError:
-                    level.Put( encoded_key, new_bytes )
-
+            flush_buffer(buffer, level)
             buffer = {}
-            print("Done.")
+
+    flush_buffer(buffer, level)
 
     print("Processed", docnum, "documents.")
-
 
 if __name__ == '__main__':
     if len(sys.argv) not in [1,2]:
