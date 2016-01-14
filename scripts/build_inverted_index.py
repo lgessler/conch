@@ -18,7 +18,7 @@ basename = os.path.join('/tmp/', uuid.uuid4().hex)
 def write_to_leveldb():
     mongo = MongoClient('localhost', port)
     coll = mongo.meteor.texts
-    level = leveldb.LevelDB('./leveldb')
+    level = leveldb.LevelDB('../leveldb')
 
     buffer = {}
     docnum = 0
@@ -37,11 +37,12 @@ def write_to_leveldb():
                 else:
                     buffer[trigram] = [docid]
                 already_seen_this_doc.append(trigram)
-        
+
         docnum += 1
 
         #if sys.getsizeof(buffer) >= 512000000:
         if sys.getsizeof(buffer) >= 1400000:
+            print("\nWriting buffer to disk...", end=" ")
             for k,v in buffer.items():
                 encoded_key = k.encode('utf-8')
                 new_bytes = (','.join(map(str,v))).encode('utf-8')
@@ -53,6 +54,9 @@ def write_to_leveldb():
                     level.Put( encoded_key, new_bytes )
 
             buffer = {}
+            print("Done.")
+
+    print("Processed", docnum, "documents.")
 
 
 if __name__ == '__main__':
@@ -68,5 +72,3 @@ if __name__ == '__main__':
             sys.exit(1)
 
     write_to_leveldb()
-                    
-
