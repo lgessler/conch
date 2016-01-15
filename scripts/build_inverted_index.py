@@ -38,7 +38,7 @@ def write_to_leveldb():
     buffer = {}
     docnum = 0
     
-    for doc in coll.find():
+    for doc in coll.find(no_cursor_timeout=True):
         docid = doc['_custom_id']
         text = doc['text']
         doclen = len(text)
