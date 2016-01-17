@@ -33,43 +33,11 @@ processQuery = function (q) {
   console.log("Combining subquery with op", q["op"]);
   switch (q["op"]) {
     case "AND":
-      if (docIdLists.length === 0)
-        break;
-      resultList = docIdLists[0];
-
-      console.log(docIdLists.length, "lists, with lengths:");
-      docIdLists.forEach(function(ls) {console.log(ls.length)});
-
-      // Iterate over remaining lists. If any elements
-      // exist in them that aren't in the resultList,
-      // remove the element from resultList.
-      for (i = 0; i < docIdLists.length; i++) {
-        var docIdList = docIdLists[i];
-        for (j = 0; j < resultList.length; j++) {
-          var docId = resultList[j];
-
-          if (docIdList.indexOf(docId) < 0) {
-            resultList.splice(j, 1);
-          }
-        }
-      }
+      resultList = Object.keys(DocIdSet.intersect(docIdLists));
       break;
 
     case "OR":
-      resultList = [];
-
-      console.log("WARNING: using potentially incorrect trigram op \"OR\". See server/invertedIndex.js.");
-      // I don't think this is correct--come back to it
-      for (i = 0; i < docIdLists.length; i++) {
-        var docIdList = docIdLists[i];
-        for (j = 0; j < docIdList.length; j++ ) {
-          var docId = docIdList[j];
-
-          if (resultList.indexOf(docId) < 0) {
-            resultList.push(docId);
-          }
-        }
-      }
+      resultList = Object.keys(DocIdSet.union(docIdLists));
       break;
 
     case "ANY":

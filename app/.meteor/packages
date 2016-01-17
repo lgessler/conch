@@ -42,3 +42,4 @@ npm-container
 meteorhacks:async
 underscore
 meteorhacks:cluster
+ecmascript

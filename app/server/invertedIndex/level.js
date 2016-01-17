@@ -24,6 +24,6 @@ Meteor.methods({
     console.log("Splitting string array from level...");
     var strArray = future.result.split(',');
     console.log("Done splitting.");
-    return strArray;
+    return new DocIdSet(strArray);
   }
 });
