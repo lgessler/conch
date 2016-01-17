@@ -34,6 +34,7 @@ DocIdSet = class DocIdSet {
 
   // assume sets is at least of length 1
   static intersect(sets) {
+    console.log("Begin intersect...");
     var firstSet = sets[0],
       answer = new DocIdSet();
 
@@ -43,7 +44,9 @@ DocIdSet = class DocIdSet {
         if (elt in currentSet)
           answer[elt] = true;
       });
+      console.log("Done with intersection", i);
     }
+    console.log("Intersect finished.");
     return answer;
   }
 
