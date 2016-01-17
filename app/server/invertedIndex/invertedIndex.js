@@ -30,12 +30,15 @@ processQuery = function (q) {
     docIdLists.push(Meteor.call('getDocIds', trigramList[i]));
   }
 
-  console.log("Combining subquery with ops...");
+  console.log("Combining subquery with op", q["op"]);
   switch (q["op"]) {
     case "AND":
       if (docIdLists.length === 0)
         break;
       resultList = docIdLists[0];
+
+      console.log(docIdLists.length, "lists, with lengths:");
+      docIdLists.forEach(function(ls) {console.log(ls.length)});
 
       // Iterate over remaining lists. If any elements
       // exist in them that aren't in the resultList,
