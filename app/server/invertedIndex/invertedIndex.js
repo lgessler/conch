@@ -18,6 +18,7 @@ processQuery = function (q) {
     // List for storing final result, a bunch of _custom_id's
     resultList;
 
+  console.log("New call to subquery", q["trigram"]);
   // Push lists from recursive evaluations of child queries.
   for (i = 0; i < subQueryLen; i++) {
     docIdLists.push(processQuery(subQueries[i]));
@@ -29,6 +30,7 @@ processQuery = function (q) {
     docIdLists.push(Meteor.call('getDocIds', trigramList[i]));
   }
 
+  console.log("Combining subquery with ops...");
   switch (q["op"]) {
     case "AND":
       if (docIdLists.length === 0)

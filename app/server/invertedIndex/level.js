@@ -11,6 +11,7 @@ var db = Level(levelPath);
 
 Meteor.methods({
   'getDocIds': function getDocIds(trigram) {
+    console.log("Fetching trigram",trigram,"from level.");
     // Async is from meteorhacks:async
     var future = Async.runSync(function(done) {
       db.get(trigram, function(err, val) {
@@ -20,7 +21,9 @@ Meteor.methods({
     });
 
     // parse str
+    console.log("Splitting string array from level...");
     var strArray = future.result.split(',');
+    console.log("Done splitting.");
     return strArray;
   }
 });

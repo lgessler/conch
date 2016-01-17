@@ -110,10 +110,13 @@ if (Meteor.isServer) {
 
     // Inverted index optimization is still unstable
     try {
+      console.log("Building trigram query...");
       // Build using bfulton/regex-trigram's query and parse functions
       trigramQuery = regexTrigram.query(regexTrigram.parse(params['term']));
+      console.log("Trigram query done.");
 
       // This performs the set operations on the inverted index, giving us a preliminary list of doc ids.
+      console.log("Calling processQuery...");
       docIdList = processQuery(trigramQuery);
 
       // If all goes well, Mongo will get this query. First finds docs that are in the list, and then
