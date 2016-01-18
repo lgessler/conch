@@ -123,11 +123,9 @@ if (Meteor.isServer) {
       // If all goes well, Mongo will get this query. First finds docs that are in the list, and then
       // sees whether their text matches the regex.
       mongoQuery = {
-        _custom_id: {$in: docIdList},
+        _custom_id: {$in: docIdList.slice(10000)},
         text: new RegExp(params['term'])
       };
-
-      mongoQuery["_custom_id"] = mongoQuery["_custom_id"].slice(0, 10000);
     }
     // Did something bad happen? In that case, bite the bullet and brute force the regex.
     // A few things can cause this, including wildcard (`.`) characters.
