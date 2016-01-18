@@ -123,7 +123,7 @@ if (Meteor.isServer) {
       // If all goes well, Mongo will get this query. First finds docs that are in the list, and then
       // sees whether their text matches the regex.
       mongoQuery = {
-        _custom_id: {$in: docIdList.slice(10000)},
+        _custom_id: {$in: docIdList},
         text: new RegExp(params['term'])
       };
     }
@@ -148,7 +148,14 @@ if (Meteor.isServer) {
       }
     } */
 
-    var coll = Texts.find(mongoQuery, {limit: params.limit });
+    var coll;
+
+    if (mongoQuery._custom_id) {
+      mongoQuery._custom_id.$in = mongoQuery._custom_id.$in.slice(0, params.limit);
+      coll = Texts.find(mongoQuery);
+    } else {
+      coll = Texts.find(mongoQuery, {limit: params.limit });
+    }
     return coll;
   });
 }
