@@ -20,6 +20,7 @@ Texts = new Meteor.Collection("texts");
 console.log("Making sure Mongo's Texts collection has an index for _custom_id...");
 Meteor.startup(function() {
   Texts._ensureIndex( {"_custom_id": 1} );
+  // indexing fails on field "text" because of a character limit
   //Texts._ensureIndex( {"_custom_id": 1, "text": 1} );
 });
 console.log("Done building Mongo index.");
@@ -125,6 +126,8 @@ if (Meteor.isServer) {
         _custom_id: {$in: docIdList},
         text: new RegExp(params['term'])
       };
+
+      mongoQuery["_custom_id"] = mongoQuery["_custom_id"].subarray(0, 10000);
     }
     // Did something bad happen? In that case, bite the bullet and brute force the regex.
     // A few things can cause this, including wildcard (`.`) characters.

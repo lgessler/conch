@@ -1,7 +1,7 @@
 // Takes in query sent by client. Evaluates it recursively
 // and returns an array of "candidate" doc ids.
 processQuery = function (q) {
-  var i, j,
+  var i,
 
     // List of trigrams the query will be operating over with q["op"].
     trigramList = q["trigram"],
@@ -54,9 +54,7 @@ processQuery = function (q) {
 
   console.log("About to return", typeof resultList, "which contains", typeof resultList[0]);
   console.log(JSON.stringify(q, null, 2));
-  console.log(resultList.length);
 
   // Mongo expects _custom_id's as ints, not strings
   return resultList.map(function (x) { return parseInt(x, 10) } );
 };
-

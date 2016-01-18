@@ -12,6 +12,10 @@ DocIdSet = class DocIdSet {
     }
   }
 
+  // Not implementing these methods and forcing the user to interact
+  // with the object directly is more dangerous, but function call
+  // overhead is too great when add() and remove() are being called
+  // millions of times.
   add(elt) {
     throw "Don't use this: instead, use set[elt] = true";
   }
@@ -19,6 +23,7 @@ DocIdSet = class DocIdSet {
     throw "Don't use this: instead, use delete set[elt]";
   }
 
+  // assume sets is at least of length 1
   static union(sets) {
     var answer = sets[0];
 
