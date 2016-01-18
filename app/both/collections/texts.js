@@ -127,7 +127,7 @@ if (Meteor.isServer) {
         text: new RegExp(params['term'])
       };
 
-      mongoQuery["_custom_id"] = mongoQuery["_custom_id"].subarray(0, 10000);
+      mongoQuery["_custom_id"] = mongoQuery["_custom_id"].slice(0, 10000);
     }
     // Did something bad happen? In that case, bite the bullet and brute force the regex.
     // A few things can cause this, including wildcard (`.`) characters.
