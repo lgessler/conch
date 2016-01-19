@@ -5,10 +5,12 @@
 DocIdSet = class DocIdSet {
   constructor(iterable) {
     if (iterable) {
+      console.log("Constructing new DocIdSet with", iterable.length, "elements");
       var self = this;
       iterable.forEach(function(elt) {
         self[elt] = true;
       });
+      console.log("Done constructing DocIdSet.");
     }
   }
 
