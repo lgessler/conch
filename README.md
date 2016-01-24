@@ -12,6 +12,8 @@ corpus, but it can be adapted for other corpora as well.
 
 #### Demo
 
+[![Join the chat at https://gitter.im/lgessler/corpex](https://badges.gitter.im/lgessler/corpex.svg)](https://gitter.im/lgessler/corpex?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Go to [corpex.lgessler.com](http://corpex.lgessler.com). 
 
 Right now corpex works by matching regular expressions against raw text. So to find all the instances of चाहता at the end of a sentence, we'd enter चाहता[\s+]?[.!?।] into the search bar and [let it rip!](http://corpex.lgessler.com/results/%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE%5B%5Cs%2B%5D%3F%5B.!%3F%E0%A5%A4%5D)
