@@ -27,7 +27,7 @@ Right now corpex works by matching regular expressions against raw text. So to f
 
 # Installation with HindMonoCorp 
 
-## Linux/OSX
+## Ubuntu/Debian Linux 
 
 First, install Meteor:
 
