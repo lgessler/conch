@@ -33,6 +33,16 @@ First, install Meteor:
 
     curl https://install.meteor.com/ | sh
 
+Now, install Go and set up your GOPATH:
+    
+    sudo apt-get install golang
+    mkdir ~/.go
+    echo "export GOPATH=/home/yourname/.go\nexport PATH=\$PATH:/home/yourname/.go/bin" >> ~/.bashrc
+
+Clone the modified version of Google Code Search:
+
+    go get github.com/lgessler/codesearch/cmd/...
+
 Clone repo:
 
     git clone https://github.com/lgessler/corpex.git
