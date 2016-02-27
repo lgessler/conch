@@ -1,7 +1,4 @@
 {
-  "twitter" : {
-    "oauth_key" : "<oauth_key>",
-    "oauth_secret" : "<oauth_secret>",
-    "api_key" : "<api_key>"
-  }
+  "CSEARCH_PATH": '/path/to/google/code/search/bin',
+  "CINDEX_PATH": '/path/to/google/code/search/bin
 }

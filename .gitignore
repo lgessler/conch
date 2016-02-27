@@ -1,2 +1,3 @@
 .idea
-leveldb
+settings-dev.json
+settings-produciton.json
