@@ -6,7 +6,7 @@ Template.home.events({
     e.preventDefault();
     var term = $(e.target).find('[name=term]').val();
     Session.set('prevTerm', term);
-    Router.go('results', {'term': term} );
+    Router.go('searchResults', {'term': term} );
   }
 });
 
