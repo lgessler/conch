@@ -37,7 +37,8 @@ Now, install Go and set up your GOPATH:
     
     sudo apt-get install golang
     mkdir ~/.go
-    echo "export GOPATH=/home/yourname/.go\nexport PATH=\$PATH:/home/yourname/.go/bin" >> ~/.bashrc
+    echo "export GOPATH=/home/YOURNAME/.go"
+    echo "export PATH=\$PATH:/home/YOURNAME/.go/bin" >> ~/.bashrc"
 
 Clone the modified version of Google Code Search:
 
