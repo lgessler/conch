@@ -1,5 +1,3 @@
-(note (2015-10-27): this app is under heavy development and the readme will probably be out of date.)
-
 **corpex (corpus explorer)** is for searching through large
 (billions of tokens) [linguistic corpora](https://en.wikipedia.org/wiki/Corpus_linguistics).
 It is intended to be useful for both language instructors and researchers by
@@ -10,7 +8,7 @@ corpex was developed for the
 [HindMonoCorp](https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0023-6260-A)
 corpus, but it can be adapted for other corpora as well.
 
-#### Demo
+# Demo
 
 Go to [corpex.lgessler.com](http://corpex.lgessler.com). 
 
@@ -18,16 +16,18 @@ Right now corpex works by matching regular expressions against raw text. So to f
 
 (Note: the inverted index has not been implemented yet (2015-10-30), so searches *will* be *absurdly* slow.)
 
-#### Components used 
+# Components used 
 
-corpex uses Meteor.js with Bootstrap 3 and some supporting Python scripts. It
-was built on top of [Differential's Meteor Boilerplate
-Lite](https://github.com/Differential/meteor-boilerplate-lite).
+* Meteor.js 
+    * [Differential's Meteor Boilerplate Lite](https://github.com/Differential/meteor-boilerplate-lite)
+* Bootstrap 3 
+* [Google Code Search](https://github.com/google/codesearch) 
 
 ------------------------
-### Installation with HindMonoCorp 
 
-#### Linux/OSX
+# Installation with HindMonoCorp 
+
+## Linux/OSX
 
 First, install Meteor:
 
@@ -45,42 +45,44 @@ Clone the modified version of Google Code Search:
 
 Clone repo:
 
+    cd ~
     git clone https://github.com/lgessler/corpex.git
-    cd corpex
 
-Launch Meteor:
+Now we're going to fetch our example data, HindMonoCorp:
 
-    cd app
-    meteor
-
-In a new terminal, download HindMonoCorp. As of 2015-10-29, only small amounts
-of data are supported, so pull out a sample.
-    
-    cd data
+    cd corpex/data
     wget https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-6260-A/hindmonocorp05.plaintext.gz?sequence=2&isAllowed=y
     gunzip hindmonocorp05.plaintext.gz
-    head -n 10000 hindmonocorp05.plaintext > hmcsample.txt
 
-Find your Meteor port (default should be 3001):
+We need to split the file into files of 5000 lines each so Code Search can efficiently index them. `process.py` will do this:
+
+    mkdir corpex-files
+    python3 process.py hindmonocorp05.plaintext
+
+Tell Code Search to index this directory:
+
+    # this'll take some time!
+    cindex ./corpex-files
+    # if you want to see whether it worked, try calling `csearch` directly:
+    csearch स्वामिभक्त
+
+Now we'll start Meteor. 
 
     cd ../app
-    meteor mongo -U
-    (result: mongodb://127.0.0.1:3001/meteor)
+    cp settings-dev.json.example settings-dev.json
 
-Install dependencies and run python script to populate MongoDB:
+    # use your favorite editor here to update the paths to `csearch` and `cindex`
+    # these should be $GOPATH/csearch and $GOPATH/cindex, but write out the absolute
+    # path just to be safe.
+    vim settings-dev.json
 
-    pip3 install pymongo tqdm
-    python3 populate_db.py data/hmcsample.txt 3001
-
-You should now be able to navigate to `localhost:3000` and begin querying.
-
-#### Windows
+## Windows
 
 Contact me if you need help and we can figure it out together to fill this
 section out :^)
 
 ------------------------
 
-### Licensing
+# License
 
 MIT 
