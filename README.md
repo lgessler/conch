@@ -18,9 +18,9 @@ Right now corpex works by matching regular expressions against raw text. So to f
 
 # Components used 
 
-* Meteor.js 
+* [Meteor.js](https://www.meteor.com)
     * [Differential's Meteor Boilerplate Lite](https://github.com/Differential/meteor-boilerplate-lite)
-* Bootstrap 3 
+* [Bootstrap 3](http://getbootstrap.com/)
 * [Google Code Search](https://github.com/google/codesearch) 
 
 ------------------------
