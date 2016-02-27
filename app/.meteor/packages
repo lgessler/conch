@@ -41,5 +41,6 @@ meteorhacks:npm
 npm-container
 meteorhacks:async
 underscore
-meteorhacks:cluster
 ecmascript
+meteorhacks:ssr
+yuukan:streamy

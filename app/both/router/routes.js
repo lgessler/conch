@@ -19,7 +19,8 @@ Router.route('searchResults', {
   template: 'searchResults',
   progress: false,
 
-  waitOn: function() {
+  onBeforeAction: function() {
     Session.set('term', this.params.term);
+    this.next();
   }
 });
