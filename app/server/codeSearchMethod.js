@@ -1,25 +1,36 @@
 // Code below taken from http://eureka.ykyuen.info/2015/02/26/meteor-run-shell-command-at-server-side/
 
-var Future = Npm.require("fibers/future");
-// Load exec
-var execFile = Npm.require("child_process").execFile;
+var spawn = Meteor.npmRequire('child_process').spawn;
 
-Meteor.methods({
-  codeSearch: function(term) {
-    this.unblock();
-    var future = new Future();
+var lineToResultObj = function(line, i) {
+  var elts;
+  var newObj;
+  var line;
 
-    var options = {
-      maxBuffer: 1024 * 5000,
-      timeout: 1000
-    };
+  elts = line.split('\t');
 
-    execFile('/home/luke/.go/bin/csearch', ['-n', term], options, function(error, stdout) {
-      if (error) {
-        console.log(error);
-      }
-      future.return(stdout.toString());
-    });
-    return future.wait();
-  }
+  newObj = {
+    text: elts[2],
+    corpus: elts[1],
+    index: i
+  };
+
+  if (newObj.text === undefined)
+    return;
+
+  return newObj;
+};
+
+Streamy.on('search', function(d, s) {
+  i = 0;
+  var csearch = spawn('/home/luke/.go/bin/csearch', ['-n', d.term]);
+
+  csearch.stdout.on('data', function(data) {
+    var o = lineToResultObj(data.toString(), i);
+    if (o) {
+      console.log(o);
+      i += 1;
+      Streamy.emit('search', o, s);
+    }
+  });
 });
