@@ -2,7 +2,7 @@
 
 var spawn = Meteor.npmRequire('child_process').spawn;
 
-var lineToResultObj = function(line, i) {
+var lineToResultObj = function(line) {
   var elts;
   var newObj;
   var line;
@@ -11,8 +11,7 @@ var lineToResultObj = function(line, i) {
 
   newObj = {
     text: elts[2],
-    corpus: elts[1],
-    index: i
+    corpus: elts[1]
   };
 
   if (newObj.text === undefined)
@@ -21,16 +20,29 @@ var lineToResultObj = function(line, i) {
   return newObj;
 };
 
+var procs = {};
 Streamy.on('search', function(d, s) {
-  i = 0;
-  var csearch = spawn('/home/luke/.go/bin/csearch', ['-n', d.term]);
+  var o;
+  console.log("Server hears an emission on 'search'", d);
 
-  csearch.stdout.on('data', function(data) {
-    var o = lineToResultObj(data.toString(), i);
-    if (o) {
-      console.log(o);
-      i += 1;
-      Streamy.emit('search', o, s);
+  var csearch = procs[s.id];
+
+  // if it already exists, kill it
+  if (d.kill) {
+    if (csearch) {
+      csearch.kill('SIGKILL');
+      delete procs[s.id];
     }
-  });
+  }
+  else {
+    csearch = spawn('/home/luke/.go/bin/csearch', ['-n', d.term]);
+    procs[s.id] = csearch;
+
+    csearch.stdout.on('data', function (data) {
+      o = lineToResultObj(data.toString());
+      if (o) {
+        Streamy.emit('search', o, s);
+      }
+    });
+  }
 });

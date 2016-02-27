@@ -21,6 +21,5 @@ Router.route('searchResults', {
 
   waitOn: function() {
     Session.set('term', this.params.term);
-    Session.set('searchResults', undefined);
   }
 });
