@@ -20,7 +20,9 @@ Router.route('searchResults', {
   progress: false,
 
   onBeforeAction: function() {
+    Session.set('ready', false);
     Session.set('term', this.params.term);
+
     this.next();
   }
 });

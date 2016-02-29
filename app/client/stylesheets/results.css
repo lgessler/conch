@@ -1,0 +1,23 @@
+
+.result-table {
+  border: none;
+}
+
+.result-line {
+  font-size: 28px;
+  white-space: nowrap;
+}
+
+.result-left {
+  text-align: right;
+}
+
+.result-center {
+  text-align: center;
+  color: navy;
+}
+
+.result-right {
+  text-align: left;
+}
+

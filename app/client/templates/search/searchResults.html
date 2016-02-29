@@ -1,19 +1,49 @@
 <template name="searchResults">
   <h1>Results for {{term}}</h1>
-  <div id="searchResults" name="searchResults"
-       style="overflow-x: scroll; height:90%; padding: 20px; margin:auto;" >
+  <div id="searchResultsWindow" style="overflow-x: scroll; height:90%; padding: 20px; margin:auto;" >
+
+
     <!-- searchResultItems get rendered here -->
-    <div id="scrollDiv">
-      {{#if moreResults}}
-        {{> loading}}
-      {{/if}}
-    </div>
+    <table class="result-table{{#unless ready}} hidden{{/unless}}">
+      <thead>
+        <tr>
+          <th></th>
+          <th id="centerCol"></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="searchResults" name="searchResults">
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <td style="max-width:1px;"> <!-- don't stretch the table -->
+            {{#if moreResults}}
+              {{> loading}}
+            {{/if}}
+          </td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
   </div>
+  {{#unless ready}}
+    {{> loading}}
+  {{/unless}}
 </template>
 
 
 <template name="searchResultItem">
-  <p style="font-size:28px; white-space:nowrap;">
-    {{{text}}}
-  </p>
+  <tr>
+    <td class="result-left result-line">
+      {{{left}}}
+    </td>
+    <td class="result-center result-line">
+      {{{center}}}
+    </td>
+    <td class="result-right result-line">
+      {{{right}}}
+    </td>
+  </tr>
 </template>
