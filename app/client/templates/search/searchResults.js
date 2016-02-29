@@ -73,6 +73,7 @@ Streamy.on('search', function(d) {
 
 Template.searchResults.created = function () {
   Session.set('moreResults', true);
+  Session.set('lastIncr', new Date());
 
   Streamy.emit('search', {
     type: 'TERM',
@@ -89,9 +90,10 @@ Template.searchResults.destroyed = function () {
 Template.searchResults.rendered = function () {
   this.$("#searchResultsWindow").bind('scroll', function() {
     console.log($(this).scrollTop(), $(this).innerHeight(), $(this)[0].scrollHeight);
-    if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight) {
-      if (Session.get('moreResults')) {
+    if($(this).scrollTop() + $(this).innerHeight() >= ($(this)[0].scrollHeight - 40)) {
+      if (Session.get('moreResults') && (new Date() - Session.get('lastIncr') > 200)) {
         Streamy.emit('search', {type: 'INCR', amt: 30});
+        Session.set('lastIncr', new Date());
       }
     }
   });
