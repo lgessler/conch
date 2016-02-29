@@ -87,12 +87,12 @@ Tell Code Search to index this directory:
 Now we'll start Meteor. 
 
     cd ../app
-    cp settings-dev.json.example settings-dev.json
+    cp settings-production.json.example settings-production.json
 
     # use your favorite editor here to update the paths to `csearch` and `cindex`
     # these should be $GOPATH/csearch and $GOPATH/cindex, but write out the absolute
     # path just to be safe.
-    vim settings-dev.json
+    vim settings-production.json
     
     # if you're behind a reverse proxy, set HTTP_FORWARDED_COUNT to 1. 
     # if you're not, set it to 0. (This is for IP logging.)
