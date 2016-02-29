@@ -6,8 +6,8 @@ height="250" width="auto"></img>
 
 **Surgical search for enormous natural language corpuses**
 
-[![Gitter](https://badges.gitter.im/lgessler/conch.svg)](https://gitter.im/lgessler/conch?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 ![](https://travis-ci.org/lgessler/conch.svg?branch=master)
+[![Gitter](https://badges.gitter.im/lgessler/conch.svg)](https://gitter.im/lgessler/conch?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 
 -----------------------
 
