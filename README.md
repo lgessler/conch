@@ -8,11 +8,11 @@ height="250" width="auto"></img>
 
 -----------------------
 
-* <a href="intro">Introduction</a>
-* <a href="demo">Demo</a>
-* <a href="install">Reference Installation</a>
-* <a href="components">Components Used</a>
-* <a href="license">License</a>
+* <a href="#intro">Introduction</a>
+* <a href="#demo">Demo</a>
+* <a href="#install">Reference Installation</a>
+* <a href="#components">Components Used</a>
+* <a href="#license">License</a>
 
 <a name="intro"></a>
 Introduction
