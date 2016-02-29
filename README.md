@@ -1,21 +1,19 @@
-<div style="text-align:center;">
-<img src="https://cdn.rawgit.com/lgessler/conch/master/.misc/conch.svg" width="300" height="auto"></img>
-</div>
+<img src="https://cdn.rawgit.com/lgessler/conch/master/.misc/conch.svg" width="250" height="auto" style="float: right;"></img>
 **conch**  is for searching through large
 (billions of tokens) [linguistic corpora](https://en.wikipedia.org/wiki/Corpus_linguistics).
 It is intended to be useful for both language instructors and researchers by
 providing them an easy interface for linguistic corpora which otherwise
 might have remained out of technical reach.
 
-corpex was developed for the 
+conch was developed for the 
 [HindMonoCorp](https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0023-6260-A)
 corpus, but it can be adapted for other corpora as well.
 
 # Demo
 
-Go to [corpex.lgessler.com](http://corpex.lgessler.com). 
+Go to [conch.lgessler.com](http://conch.lgessler.com). 
 
-Right now corpex works by matching regular expressions against raw text. So to find all the instances of चाहता at the end of a sentence, we'd enter चाहता[\s+]?[.!?।] into the search bar and [let it rip!](http://corpex.lgessler.com/results/%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE%5B%5Cs%2B%5D%3F%5B.!%3F%E0%A5%A4%5D)
+Right now conch works by matching regular expressions against raw text. So to find all the instances of चाहता at the end of a sentence, we'd enter चाहता[\s+]?[.!?।] into the search bar and [let it rip!](http://conch.lgessler.com/results/%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE%5B%5Cs%2B%5D%3F%5B.!%3F%E0%A5%A4%5D)
 
 (Note: the inverted index has not been implemented yet (2015-10-30), so searches *will* be *absurdly* slow.)
 
@@ -25,6 +23,7 @@ Right now corpex works by matching regular expressions against raw text. So to f
     * [Differential's Meteor Boilerplate Lite](https://github.com/Differential/meteor-boilerplate-lite)
 * [Bootstrap 3](http://getbootstrap.com/)
 * [Google Code Search](https://github.com/google/codesearch) 
+* [This excellent conch SVG](https://openclipart.org/detail/30709/conch)
 
 ------------------------
 
@@ -50,23 +49,23 @@ Clone the modified version of Google Code Search:
 Clone repo:
 
     cd ~
-    git clone https://github.com/lgessler/corpex.git
+    git clone https://github.com/lgessler/conch.git
 
 Now we're going to fetch our example data, HindMonoCorp:
 
-    cd corpex/data
+    cd conch/data
     wget https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-6260-A/hindmonocorp05.plaintext.gz?sequence=2&isAllowed=y
     gunzip hindmonocorp05.plaintext.gz
 
 We need to split the file into files of 5000 lines each so Code Search can efficiently index them. `process.py` will do this:
 
-    mkdir corpex-files
+    mkdir conch-files
     python3 process.py hindmonocorp05.plaintext
 
 Tell Code Search to index this directory:
 
     # this'll take some time!
-    cindex ./corpex-files
+    cindex ./conch-files
     # if you want to see whether it worked, try calling `csearch` directly:
     csearch स्वामिभक्त
 
