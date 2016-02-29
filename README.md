@@ -1,4 +1,6 @@
+<div style="text-align:center;">
 <img src="https://cdn.rawgit.com/lgessler/conch/master/.misc/conch.svg" width="300" height="auto"></img>
+</div>
 **conch**  is for searching through large
 (billions of tokens) [linguistic corpora](https://en.wikipedia.org/wiki/Corpus_linguistics).
 It is intended to be useful for both language instructors and researchers by
