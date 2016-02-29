@@ -31,17 +31,13 @@ Streamy.on('search', function(d, s) {
   var o;
   var lineBuffer = lineBuffers[s.id];
   var csearch = procs[s.id];
-
-  console.dir(s);
   
   try {
-  console.log("Server hears an emission on 'search'", d, "from client", s.id, "at", s.headers['x-forwarded-for']);
+    console.log("Server hears an emission on 'search'", d, "from client", s.id, "at", s.headers['x-forwarded-for']);
   }
   catch (e) {
     console.log("Server hears an emission on 'search'", d, "from client", s.id);
   }
-
-  console.log(s.ip);
 
   switch (d.type) {
     case 'KILL':
