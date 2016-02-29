@@ -25,6 +25,8 @@ It is intended to be useful for both language instructors and researchers by
 providing them an easy interface for linguistic corpora which otherwise
 might have remained out of technical reach.
 
+**conch** accepts regular expressions on its web interface and uses [a lightly modified version of Google Code Search](https://github.com/lgessler/codesearch) to match it against the loaded corpora.
+
 conch was developed for the 
 [HindMonoCorp](https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0023-6260-A)
 corpus, but it can be adapted for other corpora as well.
