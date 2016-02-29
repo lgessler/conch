@@ -1,5 +1,5 @@
-![](https://cdn.rawgit.com/lgessler/conch/master/.misc/conch.svg)
-**corpex (corpus explorer)** is for searching through large
+![](https://cdn.rawgit.com/lgessler/conch/master/.misc/conch.svg =300x)
+**conch**  is for searching through large
 (billions of tokens) [linguistic corpora](https://en.wikipedia.org/wiki/Corpus_linguistics).
 It is intended to be useful for both language instructors and researchers by
 providing them an easy interface for linguistic corpora which otherwise
