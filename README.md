@@ -4,7 +4,7 @@ Conch
 <img src="https://cdn.rawgit.com/lgessler/conch/master/app/public/conch.svg" 
 height="250" width="auto"></img>
 
-**Surgical search for enormous corpuses**
+**Surgical search for enormous natural language corpuses**
 
 -----------------------
 
