@@ -5,7 +5,6 @@ var spawn = Meteor.npmRequire('child_process').spawn;
 var lineToResultObj = function(line) {
   var elts;
   var newObj;
-  var line;
 
   elts = line.split('\t');
 
