@@ -20,15 +20,15 @@ height="250" width="auto"></img>
 <a name="intro"></a>
 Introduction
 ------------
-**conch**  is for searching through large
+**Conch**  is for searching through large
 (billions of tokens) [linguistic corpora](https://en.wikipedia.org/wiki/Corpus_linguistics).
 It is intended to be useful for both language instructors and researchers by
 providing them an easy interface for linguistic corpora which otherwise
 might have remained out of technical reach.
 
-**conch** accepts regular expressions on its web interface and uses [a lightly modified version of Google Code Search](https://github.com/lgessler/codesearch) to match it against the loaded corpora.
+Conch accepts regular expressions on its web interface and uses [a lightly modified version of Google Code Search](https://github.com/lgessler/codesearch) to match it against the loaded corpora.
 
-conch was developed for the 
+Conch was developed for the 
 [HindMonoCorp](https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0023-6260-A)
 corpus, but it can be adapted for other corpora as well.
 
@@ -38,7 +38,7 @@ Demo
 
 Go to [conch.lgessler.com](http://conch.lgessler.com). 
 
-Right now conch works by matching regular expressions against raw text. So to find all the instances of चाहता at the end of a sentence, we'd enter चाहता[\s+]?[.!?।] into the search bar and [let it rip!](http://conch.lgessler.com/search/%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE%5B%5Cs%2B%5D%3F%5B.!%3F%E0%A5%A4%5D)
+Right now Conch works by matching regular expressions against raw text. So to find all the instances of चाहता at the end of a sentence, we'd enter चाहता[\s+]?[.!?।] into the search bar and [let it rip!](http://conch.lgessler.com/search/%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE%5B%5Cs%2B%5D%3F%5B.!%3F%E0%A5%A4%5D)
 
 <a name="install"></a>
 Reference Installation with HindMonoCorp 
