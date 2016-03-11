@@ -1,5 +1,5 @@
 <p align="center">
-  #Conch
+  <h1>Conch</h1>
 </p>
 
 <p align="center">
@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  **Surgical search for enormous natural language corpuses**
+  <b>Surgical search for enormous natural language corpuses</b>
 </p>
 
 ![](https://travis-ci.org/lgessler/conch.svg?branch=master)
