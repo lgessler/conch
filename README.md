@@ -1,20 +1,12 @@
-<p align="center">
-  <b>Conch</b>
-</p>
+# Conch
 
-<p align="center">
-  <img src="https://cdn.rawgit.com/lgessler/conch/master/app/public/conch.svg" 
-        height="250" width="auto"></img>
-</p>
+<img src="https://cdn.rawgit.com/lgessler/conch/master/app/public/conch.svg" 
+  height="250" width="auto"></img>
 
-<p align="center">
-  Surgical search for enormous natural language corpuses
-</p>
+Surgical search for enormous natural language corpuses
 
-<p align="center">
-  ![](https://travis-ci.org/lgessler/conch.svg?branch=master)
-  [![Gitter](https://badges.gitter.im/lgessler/conch.svg)](https://gitter.im/lgessler/conch?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
-</p>
+![](https://travis-ci.org/lgessler/conch.svg?branch=master)
+[![Gitter](https://badges.gitter.im/lgessler/conch.svg)](https://gitter.im/lgessler/conch?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 
 -----------------------
 
