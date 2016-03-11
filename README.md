@@ -4,7 +4,10 @@
 </p>
 
 <p align="center">
-  <b><span style="font-size:48px;">Conch</span></b>
+  <b>Conch</b>
+</p>
+
+<p align="center">
   <b>Surgical search for enormous natural language corpuses</b>
 </p>
 
