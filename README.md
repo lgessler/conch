@@ -1,13 +1,10 @@
 <p align="center">
-  <h1>Conch</h1>
-</p>
-
-<p align="center">
   <img src="https://cdn.rawgit.com/lgessler/conch/master/app/public/conch.svg" 
         height="250" width="auto"></img>
 </p>
 
 <p align="center">
+  <b><span style="font-size:48px;">Conch</span></b>
   <b>Surgical search for enormous natural language corpuses</b>
 </p>
 
