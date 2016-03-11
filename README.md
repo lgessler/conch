@@ -1,14 +1,14 @@
 <p align="center">
+  <b>Conch</b>
+</p>
+
+<p align="center">
   <img src="https://cdn.rawgit.com/lgessler/conch/master/app/public/conch.svg" 
         height="250" width="auto"></img>
 </p>
 
 <p align="center">
-  <b>Conch</b>
-</p>
-
-<p align="center">
-  <b>Surgical search for enormous natural language corpuses</b>
+  Surgical search for enormous natural language corpuses
 </p>
 
 ![](https://travis-ci.org/lgessler/conch.svg?branch=master)
