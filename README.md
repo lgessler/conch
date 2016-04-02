@@ -115,6 +115,7 @@ Components used
     * [Differential's Meteor Boilerplate Lite](https://github.com/Differential/meteor-boilerplate-lite)
 * [Bootstrap 3](http://getbootstrap.com/)
 * [Google Code Search](https://github.com/google/codesearch) 
+* [Build-Regex](https://github.com/stevenwadejr/Build-Regex)
 * [This excellent conch SVG](https://openclipart.org/detail/30709/conch)
 
 <a name="license"></a>
