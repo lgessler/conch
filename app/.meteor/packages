@@ -18,7 +18,6 @@ mrt:underscore-string-latest
 matb33:collection-hooks
 useraccounts:bootstrap
 cunneen:mailgun
-standard-minifiers
 meteor-base
 mobile-experience
 mongo
@@ -37,7 +36,7 @@ chuangbo:cookie
 http
 
 
-npm-container
+#npm-container
 meteorhacks:async
 underscore
 ecmascript
@@ -45,3 +44,5 @@ meteorhacks:ssr
 yuukan:streamy
 mrt:cron
 natestrauser:jquery-scrollto
+standard-minifier-css
+standard-minifier-js

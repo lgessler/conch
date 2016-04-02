@@ -1,6 +1,6 @@
 // Code below taken from http://eureka.ykyuen.info/2015/02/26/meteor-run-shell-command-at-server-side/
 
-var spawn = Meteor.npmRequire('child_process').spawn;
+var spawn = require('child_process').spawn;
 
 var lineToResultObj = function(line) {
   var elts;
