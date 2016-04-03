@@ -3,6 +3,7 @@
  */
 
 Template.buildRegex.rendered = () => {
+  var VerEx = require('verbal-expressions');
   function buildExpression() {
     var t = $('input[name="modifiers[]"]:checked').map(function () {
       return $(this).val()
@@ -415,9 +416,9 @@ Template.buildRegex.rendered = () => {
         anyOf: function (t) {
           return t = this.sanitize(t), this.add("[" + t + "]"), this
         },
-        any: function (t) {
-          return this.anyOf(t)
-        },
+        //any: function (t) {
+        //  return this.anyOf(t)
+        //},
         range: function () {
           var t = "[";
           console.log(arguments);
@@ -471,8 +472,8 @@ Template.buildRegex.rendered = () => {
     tester, options_without_params = ["anything", "endOfLine", "lineBreak", "something", "startOfLine", "tab", "word"],
     match_options = {
       add: "Add",
-      any: "Any",
-      anyOf: "Any Of",
+      //any: "Any",
+      anyOf: "Any Character",
       anything: "Anything",
       anythingBut: "Anything But",
       endOfLine: "End of Line",
@@ -508,7 +509,7 @@ Template.buildRegex.rendered = () => {
     }).end().find(".match-param").on("keyup", function () {
       $(document).trigger("update-expression")
     }).end().find(".remove-match-option").on("click", function () {
-      $(this).parents(".row").remove(), $(document).trigger("update-expression")
+      $(this).parent(".row").remove(), $(document).trigger("update-expression")
     }).end().appendTo($conditions_container)
   }).one("click", function () {
     $(document).trigger("first-row-created")
