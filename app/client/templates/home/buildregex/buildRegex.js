@@ -2,6 +2,20 @@
  * Created by lukegessler on 4/2/16.
  */
 
+Template.buildRegex.events({
+  'submit #submit': (e) => {
+    e.preventDefault();
+    // extract built text and get rid of the first '/'
+    var patstr = $("#expression span").text().substring(1);
+    // extract opts, if present. NOTE: these don't work right now--remove possibility of including them?
+    var opts = patstr.substring(patstr.indexOf('/') + 1);
+    // remove last '/' and options
+    var term = patstr.substring(patstr.indexOf('/'));
+
+    Router.go('/search/' + term);
+  }
+});
+
 Template.buildRegex.rendered = () => {
   var VerEx = require('verbal-expressions');
   function buildExpression() {
