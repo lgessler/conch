@@ -6,13 +6,11 @@
     -->
     <div class="row">
       <div class="col-md-offset-10 col-md-2">
-        <button id="modebutton" type="button">
-          {{#if advanced}}
-            Simple Mode
-          {{else}}
-            Advanced Mode
-          {{/if}}
-        </button>
+        {{#if advanced}}
+          <button id="modebutton" type="button">Simple Mode</button>
+        {{else}}
+          <button id="modebutton" type="button">Advanced Mode</button>
+        {{/if}}
       </div>
     </div>
 
@@ -42,7 +40,9 @@
       </div>
     {{/if}}
   </div>
+  <!--
   {{#if tutorialNotFinished}}
     {{> tutorial options}}
   {{/if}}
+  -->
 </template>
