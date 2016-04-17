@@ -6,14 +6,8 @@ Template.buildRegex.events({
   'click #searchbutton': function(e) {
     e.preventDefault();
     console.log("ooh");
-    // extract built text
-    var patstr = $("#expression span").text();
-    // remove first '/'
-    patstr = patstr.substring(patstr.indexOf('/'));
-    // extract opts, if present. NOTE: these aren't used right now--remove possibility of including them?
-    //var opts = patstr.substring(patstr.indexOf('/') + 1);
-    // remove last '/' and options
-    var term = patstr.substring(patstr.indexOf('/'));
+    // extract built text--ignore options at index 2
+    var term = $("#expression span").text().split('/')[1];
 
     Router.go('/search/' + term);
   }
