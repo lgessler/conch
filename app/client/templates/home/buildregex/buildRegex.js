@@ -8,9 +8,8 @@ Template.buildRegex.events({
     console.log("ooh");
     // extract built text--ignore options at index 2
     var term = $("#expression span").text().split('/')[1];
-    term = term.replace('?:', '');
 
-    Router.go('/search/' + term);
+    Router.go('/search/' + expression.toString());
   }
 });
 
