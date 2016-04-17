@@ -2,8 +2,8 @@
  * Created by lukegessler on 4/2/16.
  */
 
-Template.buildRegex.events({
-  'submit #submit': function(e) {
+Template.buildRegex.event({
+  'submit #searchbutton': function(e) {
     e.preventDefault();
     console.log("ooh");
     // extract built text and get rid of the first '/'
