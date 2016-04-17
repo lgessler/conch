@@ -4,29 +4,43 @@
     <div class="page-header">
     </div>
     -->
-    <!--
     <div class="row">
-      <div class="col-md-offset-3 col-md-6">
-        <form>
-          <div class="form-group center">
-            <input name="term" id="term"
-                   type="text"
-                   class="form-control"
-                   placeholder="किया गया है"
-                   style="text-align:center;"
-                   value={{prevTerm}}
-                >
-            <button type="submit" class="btn btn-default btn-submit">Submit</button>
-          </div>
-        </form>
-        <br>
-        <br>
-        <br>
-        {{> helpText}}
-    </div>-->
-    <div class="row">
-      {{> buildRegex}}
+      <div class="col-md-offset-10 col-md-2">
+        <button id="modebutton" type="button">
+          {{#if advanced}}
+            Simple Mode
+          {{else}}
+            Advanced Mode
+          {{/if}}
+        </button>
+      </div>
     </div>
+
+    {{#if advanced}}
+      <div class="row">
+        {{> buildRegex}}
+      </div>
+    {{else}}
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <form>
+            <div class="form-group center">
+              <input name="term" id="term"
+                     type="text"
+                     class="form-control"
+                     placeholder="किया गया है"
+                     style="text-align:center;"
+                     value={{prevTerm}}
+                  >
+              <button type="submit" class="btn btn-default btn-submit">Submit</button>
+            </div>
+          </form>
+          <br>
+          <br>
+          <br>
+          {{> helpText}}
+      </div>
+    {{/if}}
   </div>
   {{#if tutorialNotFinished}}
     {{> tutorial options}}
