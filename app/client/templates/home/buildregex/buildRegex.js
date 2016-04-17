@@ -9,7 +9,7 @@ Template.buildRegex.events({
     // extract built text--ignore options at index 2
     var term = $("#expression span").text().split('/')[1];
 
-    window.open(Router.url('/search') + '/' + expression.toString().split('/')[1]);
+    window.open('/search/' + expression.toString().split('/')[1]);
   }
 });
 
