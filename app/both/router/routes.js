@@ -3,15 +3,11 @@ Router.route('/', {
   name: 'home'
 });
 
-
-
-function suppressDuplicates(textList) {
-  var seen = {};
-  return textList.filter(function(text) {
-    return seen.hasOwnProperty(text.text) ? false : (seen[text.text] = true);
-  });
-}
-
+Router.route('advanced', {
+  name: 'buildRegex',
+  path: '/advanced',
+  template: 'buildRegex'
+});
 
 Router.route('searchResults', {
   name: 'searchResults',
