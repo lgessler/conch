@@ -1,4 +1,5 @@
 .idea
+meteor.log
 settings-dev.json
-settings-produciton.json
+settings-production.json
 app/packages/

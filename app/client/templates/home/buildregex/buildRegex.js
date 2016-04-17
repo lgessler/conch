@@ -5,11 +5,10 @@
 Template.buildRegex.events({
   'click #searchbutton': function(e) {
     e.preventDefault();
-    console.log("ooh");
     // extract built text--ignore options at index 2
     var term = $("#expression span").text().split('/')[1];
 
-    window.open('/search/' + expression.toString().split('/')[1]);
+    window.open(Router.url(Meteor.settings.URL, {term: expression.toString().split('/')[1]}));
   }
 });
 

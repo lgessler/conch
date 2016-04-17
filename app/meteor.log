@@ -1,205 +1,0 @@
-[[[[[ ~/corpex/app ]]]]]
-
-=> Started proxy.
-=> Started MongoDB.
-=> Started your app.
-
-=> App running at: http://localhost:3000/
-[34mW20160229-00:26:15.586(-5)? (STDERR) [39m[35mYou now need a routing package like useraccounts:iron-routing or useraccounts:flow-routing to be able to configure routes![39m
-[34mW20160229-00:26:15.587(-5)? (STDERR) [39m[35mYou now need a routing package like useraccounts:iron-routing or useraccounts:flow-routing to be able to configure routes![39m
-=> Client modified -- refreshing=> Client modified -- refreshing (x2)=> Client modified -- refreshing (x3)=> Client modified -- refreshing (x4)=> Client modified -- refreshing (x5)=> Client modified -- refreshing (x6)=> Client modified -- refreshing (x7)=> Client modified -- refreshing (x8)=> Client modified -- refreshing (x9)=> Client modified -- refreshing (x10)
-=> Errors prevented startup:
-   
-   While processing files with templating (for target web.browser):
-   client/templates/_shared/header.html:12: Expected `>` after `/`
-   ...or 'home'}}"><conch</a>       </div>     ...
-   ^
-   
-=> Your application has errors. Waiting for file change.
-=> Modified -- restarting.
-=> Errors prevented startup:
-   
-   While processing files with templating (for target web.browser):
-   client/templates/_shared/header.html:12: Expected "a" end tag
-   ...con-32x32.png"></img>conch</a>       </di...
-   ^
-   
-=> Your application has errors. Waiting for file change.
-=> Modified -- restarting.
-=> Errors prevented startup:
-   
-   While processing files with templating (for target web.browser):
-   client/templates/_shared/header.html:13: Expected "a" end tag
-   ...con-32x32.png"></img>conch         </a>  ...
-   ^
-   
-=> Your application has errors. Waiting for file change.
-=> Modified -- restarting.
-=> Errors prevented startup:
-   
-   While processing files with templating (for target web.browser):
-   client/templates/_shared/header.html:13: Expected "p" end tag
-   ...con-32x32.png"></img></p>conch         </...
-   ^
-   
-=> Your application has errors. Waiting for file change.
-=> Modified -- restarting.
-[34mW20160229-00:50:59.109(-5)? (STDERR) [39m[35mYou now need a routing package like useraccounts:iron-routing or useraccounts:flow-routing to be able to configure routes![39m
-[34mW20160229-00:50:59.110(-5)? (STDERR) [39m[35mYou now need a routing package like useraccounts:iron-routing or useraccounts:flow-routing to be able to configure routes![39m
-=> Meteor server restarted
-=> Client modified -- refreshing=> Client modified -- refreshing (x2)=> Client modified -- refreshing (x3)=> Client modified -- refreshing (x4)=> Client modified -- refreshing (x5)=> Client modified -- refreshing (x6)=> Client modified -- refreshing (x7)=> Client modified -- refreshing (x8)=> Client modified -- refreshing (x9)=> Client modified -- refreshing (x10)=> Client modified -- refreshing (x11)=> Client modified -- refreshing (x12)=> Client modified -- refreshing (x13)=> Client modified -- refreshing (x14)
-[34mI20160229-01:00:36.183(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जा(ए|य|ये)' } from client 918411c7-9bc2-44c7-b530-fd818f55af29
-[34mI20160229-01:00:59.121(-5)? [39mRunning cindex cron job
-[34mI20160229-01:01:04.042(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: '#F8F8F8' } from client ed0ca8e1-bade-4907-af25-1e0f361a8314
-[34mI20160229-01:01:05.229(-5)? [39mServer hears an emission on 'search' { type: 'KILL' } from client ed0ca8e1-bade-4907-af25-1e0f361a8314
-[34mI20160229-01:01:08.511(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जाए' } from client ed0ca8e1-bade-4907-af25-1e0f361a8314
-[34mI20160229-01:01:09.939(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client ed0ca8e1-bade-4907-af25-1e0f361a8314
-[34mI20160229-01:01:11.122(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client ed0ca8e1-bade-4907-af25-1e0f361a8314
-=> Client modified -- refreshing
-[34mI20160229-01:01:52.891(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जा(ए|य|ये)' } from client 9c7d686c-f9db-4d46-b118-d727e18b28bb
-=> Errors prevented startup:
-   
-   While processing files with ecmascript (for target web.browser):
-   client/templates/search/searchResults.js:92:85:
-   client/templates/search/searchResults.js: Unexpected token (92:85)
-   
-=> Your application has errors. Waiting for file change.
-=> Modified -- restarting.
-[34mW20160229-01:02:20.499(-5)? (STDERR) [39m[35mYou now need a routing package like useraccounts:iron-routing or useraccounts:flow-routing to be able to configure routes![39m
-[34mW20160229-01:02:20.500(-5)? (STDERR) [39m[35mYou now need a routing package like useraccounts:iron-routing or useraccounts:flow-routing to be able to configure routes![39m
-=> Meteor server restarted
-[34mI20160229-01:02:28.634(-5)? [39mServer hears an emission on 'search' { type: 'KILL' } from client 6ac1bdb8-5ba1-4ac9-b943-6bda66bd0059
-[34mI20160229-01:02:29.629(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जाए' } from client 6ac1bdb8-5ba1-4ac9-b943-6bda66bd0059
-[34mI20160229-01:02:30.940(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ac1bdb8-5ba1-4ac9-b943-6bda66bd0059
-[34mI20160229-01:02:33.345(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client dc984e15-de94-4c1a-a269-849b4651aefe
-[34mI20160229-01:02:33.505(-5)? [39mException in callback of async function: Error: Tried to INCR a csearch that didn't exist! [500]
-[34mI20160229-01:02:33.505(-5)? [39m    at callCindex (server/codeSearchMethod.js:51:15)
-[34mI20160229-01:02:33.505(-5)? [39m    at runWithEnvironment (packages/meteor/dynamics_nodejs.js:110:1)
-[34mI20160229-01:02:33.505(-5)? [39m    at Object.<anonymous> (packages/meteor/dynamics_nodejs.js:123:1)
-[34mI20160229-01:02:33.506(-5)? [39m    at [object Object].onMessage (packages/yuukan_streamy/packages/yuukan_streamy.js:419:1)
-[34mI20160229-01:02:33.506(-5)? [39m    at livedata_server.js:548:43
-[34mI20160229-01:02:33.508(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client dc984e15-de94-4c1a-a269-849b4651aefe
-[34mI20160229-01:02:33.509(-5)? [39mException in callback of async function: Error: Tried to INCR a csearch that didn't exist! [500]
-[34mI20160229-01:02:33.509(-5)? [39m    at callCindex (server/codeSearchMethod.js:51:15)
-[34mI20160229-01:02:33.509(-5)? [39m    at runWithEnvironment (packages/meteor/dynamics_nodejs.js:110:1)
-[34mI20160229-01:02:33.510(-5)? [39m    at Object.<anonymous> (packages/meteor/dynamics_nodejs.js:123:1)
-[34mI20160229-01:02:33.510(-5)? [39m    at [object Object].onMessage (packages/yuukan_streamy/packages/yuukan_streamy.js:419:1)
-[34mI20160229-01:02:33.510(-5)? [39m    at livedata_server.js:548:43
-[34mI20160229-01:02:34.794(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client dc984e15-de94-4c1a-a269-849b4651aefe
-[34mI20160229-01:02:34.795(-5)? [39mException in callback of async function: Error: Tried to INCR a csearch that didn't exist! [500]
-[34mI20160229-01:02:34.795(-5)? [39m    at callCindex (server/codeSearchMethod.js:51:15)
-[34mI20160229-01:02:34.795(-5)? [39m    at runWithEnvironment (packages/meteor/dynamics_nodejs.js:110:1)
-[34mI20160229-01:02:34.795(-5)? [39m    at Object.<anonymous> (packages/meteor/dynamics_nodejs.js:123:1)
-[34mI20160229-01:02:34.796(-5)? [39m    at [object Object].onMessage (packages/yuukan_streamy/packages/yuukan_streamy.js:419:1)
-[34mI20160229-01:02:34.796(-5)? [39m    at livedata_server.js:548:43
-[34mI20160229-01:02:34.826(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client dc984e15-de94-4c1a-a269-849b4651aefe
-[34mI20160229-01:02:34.828(-5)? [39mException in callback of async function: Error: Tried to INCR a csearch that didn't exist! [500]
-[34mI20160229-01:02:34.828(-5)? [39m    at callCindex (server/codeSearchMethod.js:51:15)
-[34mI20160229-01:02:34.828(-5)? [39m    at runWithEnvironment (packages/meteor/dynamics_nodejs.js:110:1)
-[34mI20160229-01:02:34.828(-5)? [39m    at Object.<anonymous> (packages/meteor/dynamics_nodejs.js:123:1)
-[34mI20160229-01:02:34.828(-5)? [39m    at [object Object].onMessage (packages/yuukan_streamy/packages/yuukan_streamy.js:419:1)
-[34mI20160229-01:02:34.829(-5)? [39m    at livedata_server.js:548:43
-[34mI20160229-01:02:35.311(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client dc984e15-de94-4c1a-a269-849b4651aefe
-[34mI20160229-01:02:35.312(-5)? [39mException in callback of async function: Error: Tried to INCR a csearch that didn't exist! [500]
-[34mI20160229-01:02:35.312(-5)? [39m    at callCindex (server/codeSearchMethod.js:51:15)
-[34mI20160229-01:02:35.312(-5)? [39m    at runWithEnvironment (packages/meteor/dynamics_nodejs.js:110:1)
-[34mI20160229-01:02:35.313(-5)? [39m    at Object.<anonymous> (packages/meteor/dynamics_nodejs.js:123:1)
-[34mI20160229-01:02:35.313(-5)? [39m    at [object Object].onMessage (packages/yuukan_streamy/packages/yuukan_streamy.js:419:1)
-[34mI20160229-01:02:35.313(-5)? [39m    at livedata_server.js:548:43
-[34mI20160229-01:02:35.326(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client dc984e15-de94-4c1a-a269-849b4651aefe
-[34mI20160229-01:02:35.327(-5)? [39mException in callback of async function: Error: Tried to INCR a csearch that didn't exist! [500]
-[34mI20160229-01:02:35.327(-5)? [39m    at callCindex (server/codeSearchMethod.js:51:15)
-[34mI20160229-01:02:35.327(-5)? [39m    at runWithEnvironment (packages/meteor/dynamics_nodejs.js:110:1)
-[34mI20160229-01:02:35.327(-5)? [39m    at Object.<anonymous> (packages/meteor/dynamics_nodejs.js:123:1)
-[34mI20160229-01:02:35.328(-5)? [39m    at [object Object].onMessage (packages/yuukan_streamy/packages/yuukan_streamy.js:419:1)
-[34mI20160229-01:02:35.328(-5)? [39m    at livedata_server.js:548:43
-[34mI20160229-01:02:35.342(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client dc984e15-de94-4c1a-a269-849b4651aefe
-[34mI20160229-01:02:35.343(-5)? [39mException in callback of async function: Error: Tried to INCR a csearch that didn't exist! [500]
-[34mI20160229-01:02:35.343(-5)? [39m    at callCindex (server/codeSearchMethod.js:51:15)
-[34mI20160229-01:02:35.343(-5)? [39m    at runWithEnvironment (packages/meteor/dynamics_nodejs.js:110:1)
-[34mI20160229-01:02:35.343(-5)? [39m    at Object.<anonymous> (packages/meteor/dynamics_nodejs.js:123:1)
-[34mI20160229-01:02:35.344(-5)? [39m    at [object Object].onMessage (packages/yuukan_streamy/packages/yuukan_streamy.js:419:1)
-[34mI20160229-01:02:35.344(-5)? [39m    at livedata_server.js:548:43
-[34mI20160229-01:02:36.459(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client dc984e15-de94-4c1a-a269-849b4651aefe
-[34mI20160229-01:02:36.461(-5)? [39mException in callback of async function: Error: Tried to INCR a csearch that didn't exist! [500]
-[34mI20160229-01:02:36.462(-5)? [39m    at callCindex (server/codeSearchMethod.js:51:15)
-[34mI20160229-01:02:36.462(-5)? [39m    at runWithEnvironment (packages/meteor/dynamics_nodejs.js:110:1)
-[34mI20160229-01:02:36.462(-5)? [39m    at Object.<anonymous> (packages/meteor/dynamics_nodejs.js:123:1)
-[34mI20160229-01:02:36.462(-5)? [39m    at [object Object].onMessage (packages/yuukan_streamy/packages/yuukan_streamy.js:419:1)
-[34mI20160229-01:02:36.462(-5)? [39m    at livedata_server.js:548:43
-[34mI20160229-01:02:40.819(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जा(ए|य|ये)' } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:41.762(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:41.925(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:42.048(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:42.117(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:42.195(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:42.220(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:45.805(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:45.928(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:56.246(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:56.297(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:56.372(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:56.425(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:56.467(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-[34mI20160229-01:02:56.517(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6ab8df07-f2b6-4edd-8951-601024ce7ef4
-=> Client modified -- refreshing
-[34mI20160229-01:03:46.069(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जा(ए|य|ये)' } from client b9de77c8-db31-4bd9-8198-de6417cb8602
-=> Client modified -- refreshing
-[34mI20160229-01:04:30.841(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जाए' } from client 5294b6c6-5306-48c1-b65b-8f525165d1b7
-[34mI20160229-01:04:36.553(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जा(ए|य|ये)' } from client 0171bde2-0b26-45fe-9cee-f4bb6661f7f7
-[34mI20160229-01:04:39.491(-5)? [39mServer hears an emission on 'search' { type: 'KILL' } from client 5294b6c6-5306-48c1-b65b-8f525165d1b7
-=> Client modified -- refreshing
-[34mI20160229-01:04:42.457(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जा(ए|य|ये)' } from client 317556de-24bc-4c6e-9435-2c2f3b4bc726
-[34mI20160229-01:04:43.849(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जाए' } from client 58717c84-bcef-4bfe-805c-7b067c5d1491
-=> Client modified -- refreshing
-[34mI20160229-01:05:23.378(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जाए' } from client 8a0ce466-5636-4dcd-a7dc-c6a25a576556
-[34mI20160229-01:05:23.690(-5)? [39mServer hears an emission on 'search' { type: 'KILL' } from client 8a0ce466-5636-4dcd-a7dc-c6a25a576556
-[34mI20160229-01:05:23.971(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जा(ए|य|ये)' } from client 09b4adf2-080e-467b-bdc2-b7e06ff716ba
-[34mI20160229-01:05:25.539(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जाए' } from client 8a0ce466-5636-4dcd-a7dc-c6a25a576556
-[34mI20160229-01:05:26.324(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 8a0ce466-5636-4dcd-a7dc-c6a25a576556
-=> Client modified -- refreshing
-[34mI20160229-01:05:30.718(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जा(ए|य|ये)' } from client 46b6514f-4aee-4478-b8ba-2027d449e6c2
-[34mI20160229-01:05:32.470(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जाए' } from client 6cb110ee-f16e-498b-8819-0f5d128b2fa0
-[34mI20160229-01:05:33.014(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6cb110ee-f16e-498b-8819-0f5d128b2fa0
-[34mI20160229-01:05:34.363(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6cb110ee-f16e-498b-8819-0f5d128b2fa0
-[34mI20160229-01:05:35.513(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 6cb110ee-f16e-498b-8819-0f5d128b2fa0
-[34mI20160229-01:05:44.286(-5)? [39mServer hears an emission on 'search' { type: 'KILL' } from client 6cb110ee-f16e-498b-8819-0f5d128b2fa0
-[34mI20160229-01:06:00.783(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 46b6514f-4aee-4478-b8ba-2027d449e6c2
-[34mI20160229-01:06:01.192(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 46b6514f-4aee-4478-b8ba-2027d449e6c2
-[34mI20160229-01:06:02.664(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 46b6514f-4aee-4478-b8ba-2027d449e6c2
-[34mI20160229-01:06:03.632(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 46b6514f-4aee-4478-b8ba-2027d449e6c2
-[34mI20160229-01:06:05.631(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 46b6514f-4aee-4478-b8ba-2027d449e6c2
-[34mI20160229-01:06:06.031(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client 46b6514f-4aee-4478-b8ba-2027d449e6c2
-=> Client modified -- refreshing=> Client modified -- refreshing (x2)=> Client modified -- refreshing (x3)=> Client modified -- refreshing (x4)=> Client modified -- refreshing (x5)
-[34mI20160229-01:57:45.355(-5)? [39mServer hears an emission on 'search' { type: 'TERM', term: 'हो जा(ए|य|ये)[ ।.?!,]' } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:57:46.931(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:57:48.115(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:57:52.480(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:57:56.714(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:57:58.598(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:57:59.714(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:58:00.715(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:58:01.832(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:58:02.932(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:58:04.348(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:58:05.648(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:58:07.164(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:58:09.666(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-01:58:12.032(-5)? [39mServer hears an emission on 'search' { type: 'INCR', amt: 30 } from client a13ec0b1-16c8-45df-9a54-e68f94e1045c
-[34mI20160229-02:00:20.566(-5)? [39mRunning cindex cron job
-=> Server modified -- restarting...                                   [34mW20160229-02:46:42.796(-5)? (STDERR) [39m[35mYou now need a routing package like useraccounts:iron-routing or useraccounts:flow-routing to be able to configure routes![39m
-[34mW20160229-02:46:42.797(-5)? (STDERR) [39m[35mYou now need a routing package like useraccounts:iron-routing or useraccounts:flow-routing to be able to configure routes![39m
-=> Meteor server restarted
-=> Server modified -- restarting...                                   => Errors prevented startup:
-   
-   While selecting package versions:
-   error: unknown package in top-level dependencies: npm-container
-   
-=> Your application has errors. Waiting for file change.
-=> Modified -- restarting.
-=> Errors prevented startup:
-   
-   While selecting package versions:
-   error: unknown package in top-level dependencies: npm-container
-   
-=> Your application has errors. Waiting for file change.

@@ -1,4 +1,5 @@
 {
   "CSEARCH_PATH": "/path/to/google/code/search/bin",
-  "CINDEX_PATH": "/path/to/google/code/search/bin"
+  "CINDEX_PATH": "/path/to/google/code/search/bin",
+  "URL": "http://your.url.com"
 }
