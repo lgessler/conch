@@ -3,7 +3,7 @@
  */
 
 Template.buildRegex.events({
-  'submit #searchbutton': function(e) {
+  'click #searchbutton': function(e) {
     e.preventDefault();
     console.log("ooh");
     // extract built text and get rid of the first '/'
