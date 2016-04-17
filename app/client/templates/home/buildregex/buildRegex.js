@@ -2,14 +2,19 @@
  * Created by lukegessler on 4/2/16.
  */
 
+// todo: shuffle around options, more testing
+
 Template.buildRegex.events({
   'click #searchbutton': function(e) {
     e.preventDefault();
     // extract built text--ignore options at index 2
     var term = $("#expression span").text().split('/')[1];
 
-    var domainName = window.location.href.split('/')[2];
+    // Do it this way because we need Meteor to handle escaping the URL for us
+    // todo: fix this when urls are made to not contain characters that can cause trouble (base64?)
     var formattedUrl = Router.url('searchResults', {term: expression.toString().split('/')[1]});
+
+    var domainName = window.location.href.split('/')[2];
     formattedUrl = formattedUrl.split('/');
     formattedUrl[2] = domainName;
     formattedUrl = formattedUrl.join('/');
