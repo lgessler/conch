@@ -1,26 +1,23 @@
 <template name="buildRegex">
-  <div class="container">
-    <div class="row">
-      <button id="new-condition" class="btn btn-primary col-lg-2">
-        <i class="icon icon-plus"></i> New Part
-      </button>
-      <div class="col-lg-10">
-        <div class="" id="expression">
-          <strong>Expression: </strong><span></span>
-        </div>
+  <div class="row">
+    <button id="new-condition" class="btn btn-primary col-lg-2">
+      <i class="icon icon-plus"></i> New Part
+    </button>
+    <div class="col-lg-10">
+      <div class="" id="expression">
+        <strong>Expression: </strong><span></span>
       </div>
     </div>
-    <hr>
-
-    <form>
-      <div id="conditions"></div>
-      <div class="row">
-          <button name="searchbutton" id="searchbutton" class="btn btn-primary col-offset-10 col-lg-2">
-            <span class="icon icon-search"></span> Search
-          </button>
-      </div>
-    </form>
   </div>
+  <hr>
+  <form>
+    <div id="conditions"></div>
+    <div class="row">
+        <button name="searchbutton" id="searchbutton" class="btn btn-primary col-offset-10 col-lg-2">
+          <span class="icon icon-search"></span> Search
+        </button>
+    </div>
+  </form>
 
   <script type="text/template" id="row-template">
     <select class="match-options form-control col-lg-2"></select>
