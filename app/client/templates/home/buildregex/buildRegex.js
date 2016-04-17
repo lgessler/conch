@@ -2,7 +2,7 @@
  * Created by lukegessler on 4/2/16.
  */
 
-Template.buildRegex.event({
+Template.buildRegex.events({
   'submit #searchbutton': function(e) {
     e.preventDefault();
     console.log("ooh");
