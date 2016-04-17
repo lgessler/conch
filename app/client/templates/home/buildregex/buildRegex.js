@@ -9,7 +9,7 @@ Template.buildRegex.events({
     var term = $("#expression span").text().split('/')[1];
 
     var domainName = window.location.href.split('/')[2];
-    var formattedUrl = Router.url(searchResults, {term: expression.toString().split('/')[1]});
+    var formattedUrl = Router.url('searchResults', {term: expression.toString().split('/')[1]});
     formattedUrl = formattedUrl.split('/');
     formattedUrl[2] = domainName;
     formattedUrl = formattedUrl.join('/');
