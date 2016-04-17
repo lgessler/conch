@@ -3,7 +3,7 @@
  */
 
 Template.buildRegex.events({
-  'submit #submit': (e) => {
+  'submit #submit'(e) {
     e.preventDefault();
     // extract built text and get rid of the first '/'
     var patstr = $("#expression span").text().substring(1);
