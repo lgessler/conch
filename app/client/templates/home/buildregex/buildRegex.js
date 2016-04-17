@@ -3,8 +3,9 @@
  */
 
 Template.buildRegex.events({
-  'submit #submit'(e) {
+  'submit #submit': function(e) {
     e.preventDefault();
+    console.log("ooh");
     // extract built text and get rid of the first '/'
     var patstr = $("#expression span").text().substring(1);
     // extract opts, if present. NOTE: these don't work right now--remove possibility of including them?
