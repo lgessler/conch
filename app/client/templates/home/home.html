@@ -5,41 +5,25 @@
     </div>
     -->
     <div class="row">
-      <div class="col-md-2">
-        {{#if advanced}}
-          <div class="btn btn-primary" id="modebutton" type="button">Simple Mode</div>
-        {{else}}
-          <div class="btn btn-primary" id="modebutton" type="button">Advanced Mode</div>
-        {{/if}}
+      <div class="col-md-offset-3 col-md-6">
+        <form>
+          <div class="form-group center">
+            <input name="term" id="term"
+                   type="text"
+                   class="form-control"
+                   placeholder="किया गया है"
+                   style="text-align:center;"
+                   value={{prevTerm}}
+                >
+            <button type="submit" class="btn btn-default btn-submit">Submit</button>
+          </div>
+        </form>
+        <br>
+        <br>
+        <br>
+        {{> helpText}}
       </div>
     </div>
-
-    {{#if advanced}}
-      <div class="row">
-        {{> buildRegex}}
-      </div>
-    {{else}}
-      <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-          <form>
-            <div class="form-group center">
-              <input name="term" id="term"
-                     type="text"
-                     class="form-control"
-                     placeholder="किया गया है"
-                     style="text-align:center;"
-                     value={{prevTerm}}
-                  >
-              <button type="submit" class="btn btn-default btn-submit">Submit</button>
-            </div>
-          </form>
-          <br>
-          <br>
-          <br>
-          {{> helpText}}
-        </div>
-      </div>
-    {{/if}}
   </div>
   <!--
   {{#if tutorialNotFinished}}
