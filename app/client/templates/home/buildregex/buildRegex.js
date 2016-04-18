@@ -399,31 +399,31 @@ Template.buildRegex.rendered = () => {
           return t = 0 != t, this._suffixes = t ? "$" : "", this.add(""), this
         },
         then: function (t) {
-          return t = this.sanitize(t), this.add("(?:" + t + ")"), this
+          return t = this.sanitize(t), this.add("(" + t + ")"), this
         },
         find: function (t) {
           return this.then(t)
         },
         maybe: function (t) {
-          return t = this.sanitize(t), this.add("(?:" + t + ")?"), this
+          return t = this.sanitize(t), this.add("(" + t + ")?"), this
         },
         anything: function () {
-          return this.add("(?:.*)"), this
+          return this.add("(.*)"), this
         },
         anythingBut: function (t) {
-          return t = this.sanitize(t), this.add("(?:[^" + t + "]*)"), this
+          return t = this.sanitize(t), this.add("([^" + t + "]*)"), this
         },
         something: function () {
-          return this.add("(?:.+)"), this
+          return this.add("(.+)"), this
         },
         somethingBut: function (t) {
-          return t = this.sanitize(t), this.add("(?:[^" + t + "]+)"), this
+          return t = this.sanitize(t), this.add("([^" + t + "]+)"), this
         },
         replace: function (t, e) {
           return t = "" + t, t.replace(this, e)
         },
         lineBreak: function () {
-          return this.add("(?:(?:\\n)|(?:\\r\\n))"), this
+          return this.add("((\\n)|(\\r\\n))"), this
         },
         br: function () {
           return this.lineBreak()
@@ -478,7 +478,7 @@ Template.buildRegex.rendered = () => {
           return this.add(t), this
         },
         or: function (t) {
-          return this._prefixes += "(?:", this._suffixes = ")" + this._suffixes, this.add(")|(?:"), t && this.then(t), this
+          return this._prefixes += "(", this._suffixes = ")" + this._suffixes, this.add(")|("), t && this.then(t), this
         },
         beginCapture: function () {
           return this._suffixes += ")", this.add("(", !1), this
@@ -492,23 +492,23 @@ Template.buildRegex.rendered = () => {
     row_html = $("#row-template").html(),
     tester, options_without_params = ["anything", "endOfLine", "lineBreak", "something", "startOfLine", "tab", "word"],
     match_options = {
-      add: "Add",
       //any: "Any",
-      anyOf: "Any Character",
+      find: "Text",
       anything: "Anything",
-      anythingBut: "Anything But",
-      endOfLine: "End of Line",
-      find: "Find",
-      lineBreak: "Line Break",
+      something: "Something",
+      anythingBut: "Anything Except These Characters",
+      somethingBut: "Something Except These Characters",
+      anyOf: "Any Character",
       maybe: "Maybe",
       or: "Or",
-      range: "Range",
-      something: "Something",
-      somethingBut: "Something But",
-      startOfLine: "Start of Line",
-      tab: "Tab",
-      then: "Then",
-      word: "Word"
+      //range: "Range",
+      //endOfLine: "End of Line",
+      //lineBreak: "Line Break",
+      //startOfLine: "Start of Line",
+      //tab: "Tab",
+      //then: "Then",
+      //word: "Word", // not guaranteed to work for all languages by JS's implementation of PCREs
+      add: "Raw Regex"
     };
 
   $("#new-condition").on("click", function () {
