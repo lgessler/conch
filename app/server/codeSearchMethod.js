@@ -61,7 +61,8 @@ Streamy.on('search', function(d, s) {
       csearch = spawn(Meteor.settings.CSEARCH_PATH, ['-n', d.term]);
       procs[s.id] = csearch;
       numsSent[s.id] = 0;
-      limits[s.id] = 20;
+      //limits[s.id] = 20;
+      limits[s.id] = Number.POSITIVE_INFINITY;
       lineBuffer = [];
       lineBuffers[s.id] = lineBuffer;
 
