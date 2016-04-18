@@ -12,6 +12,6 @@ with open(sys.argv[1], 'r') as f:
         if (i % 5000 == 0) and (i != 0):
             with open("".join(['conch-files/', sys.argv[2] + '/', format(i, '012d'), '.cxf']), 'w') as o:
                 o.write(accum)
-            accum = ""
+            accum = "" 
 
 print("Successfully finished writing files.")
