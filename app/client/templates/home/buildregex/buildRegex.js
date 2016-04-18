@@ -492,23 +492,23 @@ Template.buildRegex.rendered = () => {
     row_html = $("#row-template").html(),
     tester, options_without_params = ["anything", "endOfLine", "lineBreak", "something", "startOfLine", "tab", "word"],
     match_options = {
-      add: "Add",
       //any: "Any",
-      anyOf: "Any Character",
+      find: "Text",
       anything: "Anything",
-      anythingBut: "Anything But",
-      endOfLine: "End of Line",
-      find: "Find",
-      lineBreak: "Line Break",
+      something: "Something",
+      anythingBut: "Anything Except These Characters",
+      somethingBut: "Something Except These Characters",
+      anyOf: "Any Character",
       maybe: "Maybe",
       or: "Or",
-      range: "Range",
-      something: "Something",
-      somethingBut: "Something But",
-      startOfLine: "Start of Line",
-      tab: "Tab",
-      then: "Then",
-      word: "Word"
+      //range: "Range",
+      //endOfLine: "End of Line",
+      //lineBreak: "Line Break",
+      //startOfLine: "Start of Line",
+      //tab: "Tab",
+      //then: "Then",
+      //word: "Word", // not guaranteed to work for all languages by JS's implementation of PCREs
+      add: "Raw Regex"
     };
 
   $("#new-condition").on("click", function () {
