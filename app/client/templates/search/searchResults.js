@@ -79,12 +79,14 @@ Template.searchResults.created = function () {
     type: 'TERM',
     term: Session.get('term')
   });
-};
 
-Template.searchResults.destroyed = function () {
-  Streamy.emit('search', {
-    type: 'KILL'
-  });
+  var killCsearch = function() { Streamy.emit('search', {type: 'KILL'}); };
+
+  $(window).unload(killCsearch);
+  window.onbeforeunload = killCsearch;
+  $(window).on('beforeunload', killCsearch);
+  $(window).on('unload', killCsearch);
+  $(window).on('close', killCsearch);
 };
 
 Template.searchResults.rendered = function () {
