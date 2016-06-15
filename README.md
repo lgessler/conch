@@ -5,6 +5,8 @@
 
 Surgical search for enormous natural language corpuses
 
+**6/15/16:** Inactive for the present, but with a strong intention of returning. I need to develop certain skills more before I can make meaningful progress on Conch.
+
 <!--![](https://travis-ci.org/lgessler/conch.svg?branch=master)-->
 [![Gitter](https://badges.gitter.im/lgessler/conch.svg)](https://gitter.im/lgessler/conch?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 
