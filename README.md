@@ -37,7 +37,7 @@ corpus, but it can be adapted for other corpora as well.
 Demo
 ----
 
-Go to [conch.lgessler.com](http://conch.lgessler.com). 
+Go to [conch.lgessler.com](http://conch.lgessler.com). (Edit 2/21/2017: sorry, offline for now :()
 
 Right now Conch works by matching regular expressions against raw text. So to find all the instances of चाहता at the end of a sentence, we'd enter चाहता[\s+]?[.!?।] into the search bar and [let it rip!](http://conch.lgessler.com/search/%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE%5B%5Cs%2B%5D%3F%5B.!%3F%E0%A5%A4%5D)
 
